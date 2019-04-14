@@ -1,0 +1,1 @@
+var app=angular.module('comb',['pagination']);	//定义带分页蜂巢模块

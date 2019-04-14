@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>我的订单</title>
+    <link rel="icon" href="icon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages-seckillOrder.css" />
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="plugins/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/service/loginService.js"></script>
+	<script type="text/javascript" src="js/service/orderService.js"></script>
+	<script type="text/javascript" src="js/controller/indexController.js"></script>    
+</head>
+
+
+<body  ng-app="comb" ng-controller="indexController" ng-init="showName();findOrderList();">
+<!-- 头部 -->
+<div id="head_html" ng-include="'head_html.html'"></div>
+</body>  
+
+
+<div id="account">
+	<div class="py-container">
+    	<div class="yui3-g home">   
+    	     	
+        	<!--左侧列表-->
+        	<div class="yui3-u-1-6 list">
+        	<!-- 引入导航共用 -->
+				<div id="nav_html" ng-include="'nav_html.html'"></div>  
+            </div>
+   
+  			<!--右侧主内容-->
+            <div class="yui3-u-5-6 order-pay">
+            	<div class="body">
+	                <div class="table-title">
+	                            <table class="sui-table  order-table">
+	                                <tr>
+	                                    <thead>
+	                                        <th width="35%">宝贝</th>
+	                                        <th width="5%">单价</th>
+	                                        <th width="5%">数量</th>
+	                                        <th width="8%">商品操作</th>
+	                                        <th width="10%">实付款</th>
+	                                        <th width="10%">交易状态</th>
+	                                        <th width="10%">交易操作</th>
+	                                    </thead>
+	                                </tr>
+	                            </table>
+	                        </div>
+	                <div class="order-detail">
+	                            <div class="orders">
+	                   <!--             <div class="choose-order">
+	                                    <div class="sui-pagination pagination-large top-pages">
+	                                        <ul>
+	                                            <li class="prev disabled"><a href="#">上一页</a></li>
+	
+	                                            <li class="next"><a href="#">下一页</a></li>
+	                                        </ul>
+	                                    </div>
+	                                </div>
+							-->  
+								<h4>我的订单</h4>
+									<!--order1-->
+									<div ng-repeat="order in orderList">
+			                                <div class="choose-title">
+			                                    <label data-toggle="checkbox" class="checkbox-pretty ">
+			                                           <input type="checkbox" checked="checked"><span>订单编号：{{order.order.orderId}}  店铺：{{order.nickName}} <a>店铺详情</a></span>
+			                                     </label>
+												  <a class="sui-btn btn-info share-btn">分享</a>
+			                                </div>
+			                                <div ng-repeat="item in order.orderItem track by $index">
+		                               		<table class="sui-table table-bordered order-datatable">
+		                                    <tbody>
+		                                        <tr>
+		                                            <td width="35%">
+		                                                <div class="typographic"><img src="{{item.picPath}}" width="100px" height="100px"/>
+		                                                    <a href="#" class="block-text">包邮 {{item.title}}</a>
+		                                                    <span class="guige">规格：{{item.title}}</span>
+		                                                </div>
+		                                            </td>
+		                                            <td width="5%" class="center">
+		                                                <ul class="unstyled">
+		                                                    <li class="o-price">¥{{item.price}}</li>
+		                                                    <li>¥{{item.price}}</li>
+		                                                </ul>
+		                                            </td>
+		                                            <td width="5%" class="center">数量：{{item.num}}</td>
+		                                            <td width="8%" class="center">
+		                                               
+		                                            </td>
+		                                            <td width="10%" class="center" >
+		                                                <ul class="unstyled">
+		                                                    <li>{{item.price}}</li>
+		                                                    <li>（含运费：￥0.00）</li>
+		                                                </ul>
+		                                            </td>
+		                                            <td width="10%" class="center">
+		                                                <ul class="unstyled">
+		                                                    <li>{{status[order.order.status]}}</li>
+		                                                    <li><a href="home-orderDetail.html#?id={{order.order.orderId}}" class="btn">订单详情 </a></li>
+		                                                </ul>
+		                                            </td>
+			                                           
+		                                        </tr>
+		                                    </tbody>
+		                                </table>
+		                                </div>
+		                                <table class="sui-table table-bordered order-datatable">
+		                                <tbody>
+		                                			<tr ng-if="order.order.status == 1 || order.order.status == 2 || order.order.status == 3 || order.order.status == 4">
+		                                 				<td width="100%" class="center">
+			                                                <ul class="unstyled">
+																<li><a href="#" class="sui-btn btn-info" ng-click="ensure(order.order.orderId)" onclick="window.location.reload();">确认收货</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;取消订单</li>	
+			                                                </ul>
+			                                            </td>
+			                                       </tr>
+			                                       <tr ng-if="order.order.status == 5 || order.order.status == 6 || order.order.status == 7">
+		                                 				<td width="100%" class="center">
+			                                                <ul class="unstyled">
+																<li><a href="#" class="sui-btn btn-info" onclick="window.location.reload();">立即评价（暂未开通）</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;取消订单</li>	
+			                                                </ul>
+			                                            </td>
+			                                       </tr>
+			                             </tbody>
+		                                </table>
+		                                
+	                                </div>
+	                                
+	                            </div>
+	                      
+	                            </div>
+	                 <!-- 数据表格 /-->
+	                 <!-- 分页 -->
+					<tm-pagination conf="paginationConf"></tm-pagination>
+	                <div class="clearfix"></div>
+                </div>
+                         
+                <!-- 广告位 -->
+                <div id="content_html" ng-include="'content_html.html'"></div>    
+             </div>
+		</div>
+                
+	</div>
+</div>       
+    
+    <!-- 底部栏位 -->
+  <div id="foot_html" ng-include="'foot_html.html'"></div>
+
+</html>

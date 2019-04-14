@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.comb.mapper.TbApplyTeamMapper" >
+  <resultMap id="BaseResultMap" type="com.comb.pojo.TbApplyTeam" >
+    <id column="team_id" property="teamId" jdbcType="BIGINT" />
+    <result column="team_name" property="teamName" jdbcType="VARCHAR" />
+    <result column="team_member" property="teamMember" jdbcType="VARCHAR" />
+    <result column="team_leader" property="teamLeader" jdbcType="VARCHAR" />
+    <result column="team_phone" property="teamPhone" jdbcType="VARCHAR" />
+    <result column="FileSize" property="filesize" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.comb.pojo.TbApplyTeamWithBLOBs" extends="BaseResultMap" >
+    <result column="team_content" property="teamContent" jdbcType="LONGVARCHAR" />
+    <result column="FileData" property="filedata" jdbcType="LONGVARBINARY" />
+    <result column="team_feedback" property="teamFeedback" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    team_id, team_name, team_member, team_leader, team_phone, FileSize, status, created, 
+    updated
+  </sql>
+  <sql id="Blob_Column_List" >
+    team_content, FileData, team_feedback
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.comb.pojo.TbApplyTeamExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_apply_team
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.comb.pojo.TbApplyTeamExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_apply_team
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_apply_team
+    where team_id = #{teamId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tb_apply_team
+    where team_id = #{teamId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.comb.pojo.TbApplyTeamExample" >
+    delete from tb_apply_team
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.comb.pojo.TbApplyTeamWithBLOBs" >
+    insert into tb_apply_team (team_id, team_name, team_member, 
+      team_leader, team_phone, FileSize, 
+      status, created, updated, 
+      team_content, FileData, team_feedback
+      )
+    values (#{teamId,jdbcType=BIGINT}, #{teamName,jdbcType=VARCHAR}, #{teamMember,jdbcType=VARCHAR}, 
+      #{teamLeader,jdbcType=VARCHAR}, #{teamPhone,jdbcType=VARCHAR}, #{filesize,jdbcType=BIGINT}, 
+      #{status,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, 
+      #{teamContent,jdbcType=LONGVARCHAR}, #{filedata,jdbcType=LONGVARBINARY}, #{teamFeedback,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.comb.pojo.TbApplyTeamWithBLOBs" >
+    insert into tb_apply_team
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="teamId != null" >
+        team_id,
+      </if>
+      <if test="teamName != null" >
+        team_name,
+      </if>
+      <if test="teamMember != null" >
+        team_member,
+      </if>
+      <if test="teamLeader != null" >
+        team_leader,
+      </if>
+      <if test="teamPhone != null" >
+        team_phone,
+      </if>
+      <if test="filesize != null" >
+        FileSize,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+      <if test="teamContent != null" >
+        team_content,
+      </if>
+      <if test="filedata != null" >
+        FileData,
+      </if>
+      <if test="teamFeedback != null" >
+        team_feedback,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="teamId != null" >
+        #{teamId,jdbcType=BIGINT},
+      </if>
+      <if test="teamName != null" >
+        #{teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="teamMember != null" >
+        #{teamMember,jdbcType=VARCHAR},
+      </if>
+      <if test="teamLeader != null" >
+        #{teamLeader,jdbcType=VARCHAR},
+      </if>
+      <if test="teamPhone != null" >
+        #{teamPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="filesize != null" >
+        #{filesize,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="teamContent != null" >
+        #{teamContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filedata != null" >
+        #{filedata,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="teamFeedback != null" >
+        #{teamFeedback,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.comb.pojo.TbApplyTeamExample" resultType="java.lang.Integer" >
+    select count(*) from tb_apply_team
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_apply_team
+    <set >
+      <if test="record.teamId != null" >
+        team_id = #{record.teamId,jdbcType=BIGINT},
+      </if>
+      <if test="record.teamName != null" >
+        team_name = #{record.teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamMember != null" >
+        team_member = #{record.teamMember,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamLeader != null" >
+        team_leader = #{record.teamLeader,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamPhone != null" >
+        team_phone = #{record.teamPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filesize != null" >
+        FileSize = #{record.filesize,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.created != null" >
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated != null" >
+        updated = #{record.updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.teamContent != null" >
+        team_content = #{record.teamContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.filedata != null" >
+        FileData = #{record.filedata,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="record.teamFeedback != null" >
+        team_feedback = #{record.teamFeedback,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update tb_apply_team
+    set team_id = #{record.teamId,jdbcType=BIGINT},
+      team_name = #{record.teamName,jdbcType=VARCHAR},
+      team_member = #{record.teamMember,jdbcType=VARCHAR},
+      team_leader = #{record.teamLeader,jdbcType=VARCHAR},
+      team_phone = #{record.teamPhone,jdbcType=VARCHAR},
+      FileSize = #{record.filesize,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=INTEGER},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      team_content = #{record.teamContent,jdbcType=LONGVARCHAR},
+      FileData = #{record.filedata,jdbcType=LONGVARBINARY},
+      team_feedback = #{record.teamFeedback,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_apply_team
+    set team_id = #{record.teamId,jdbcType=BIGINT},
+      team_name = #{record.teamName,jdbcType=VARCHAR},
+      team_member = #{record.teamMember,jdbcType=VARCHAR},
+      team_leader = #{record.teamLeader,jdbcType=VARCHAR},
+      team_phone = #{record.teamPhone,jdbcType=VARCHAR},
+      FileSize = #{record.filesize,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=INTEGER},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.comb.pojo.TbApplyTeamWithBLOBs" >
+    update tb_apply_team
+    <set >
+      <if test="teamName != null" >
+        team_name = #{teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="teamMember != null" >
+        team_member = #{teamMember,jdbcType=VARCHAR},
+      </if>
+      <if test="teamLeader != null" >
+        team_leader = #{teamLeader,jdbcType=VARCHAR},
+      </if>
+      <if test="teamPhone != null" >
+        team_phone = #{teamPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="filesize != null" >
+        FileSize = #{filesize,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="teamContent != null" >
+        team_content = #{teamContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="filedata != null" >
+        FileData = #{filedata,jdbcType=LONGVARBINARY},
+      </if>
+      <if test="teamFeedback != null" >
+        team_feedback = #{teamFeedback,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where team_id = #{teamId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.comb.pojo.TbApplyTeamWithBLOBs" >
+    update tb_apply_team
+    set team_name = #{teamName,jdbcType=VARCHAR},
+      team_member = #{teamMember,jdbcType=VARCHAR},
+      team_leader = #{teamLeader,jdbcType=VARCHAR},
+      team_phone = #{teamPhone,jdbcType=VARCHAR},
+      FileSize = #{filesize,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      team_content = #{teamContent,jdbcType=LONGVARCHAR},
+      FileData = #{filedata,jdbcType=LONGVARBINARY},
+      team_feedback = #{teamFeedback,jdbcType=LONGVARCHAR}
+    where team_id = #{teamId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.comb.pojo.TbApplyTeam" >
+    update tb_apply_team
+    set team_name = #{teamName,jdbcType=VARCHAR},
+      team_member = #{teamMember,jdbcType=VARCHAR},
+      team_leader = #{teamLeader,jdbcType=VARCHAR},
+      team_phone = #{teamPhone,jdbcType=VARCHAR},
+      FileSize = #{filesize,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP}
+    where team_id = #{teamId,jdbcType=BIGINT}
+  </update>
+</mapper>

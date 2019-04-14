@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title>订单详情</title>
+    <link rel="icon" href="icon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages-seckillOrder.css" />
+    
+    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="plugins/angularjs/angular.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/service/loginService.js"></script>
+	<script type="text/javascript" src="js/service/orderService.js"></script>
+	<script type="text/javascript" src="js/service/detailService.js"></script>
+	<script type="text/javascript" src="js/controller/indexController.js"></script>
+    <script type="text/javascript" src="js/controller/detailController.js"></script>
+    
+    
+</head>
+
+<body ng-app="comb" ng-controller="detailController" ng-init="showName();findOrder();">
+<!-- 头部 -->
+<div id="head_html" ng-include="'head_html.html'"></div>
+</body>
+    <!--header-->
+<div id="account">
+	<div class="py-container">
+    	<div class="yui3-g home">
+                <!--左侧列表-->
+                <div class="yui3-u-1-6 list">
+                 	<div id="nav_html" ng-include="'nav_html.html'"></div>  
+                </div>
+                <!--右侧主内容-->
+                <div class="yui3-u-5-6">
+                    <div class="body">
+                        <div class="order-detail">
+                            <h4>订单详情</h4>
+                            <div class="order-bar">
+                                <div class="sui-steps-round steps-round-auto steps-4">
+                                    <div class="{{status_order[1]}}">
+                                        <div class="wrap">
+                                        <div class="round">1</div>
+                                        <div class="bar"></div>
+                                        </div>
+                                        <label>
+                                            <span>提交订单</span>
+                                            <span>{{orderItem.order.createTime}}</span>
+                                        </label>
+                                    </div>
+                                    <div class="{{status_order[2]}}">
+                                        <div class="wrap">
+                                        <div class="round">2</div>
+                                        <div class="bar"></div>
+                                        </div>
+                                        <label>
+                                            <span>付款成功</span>
+                                            <span>{{orderItem.order.createTime}}</span>
+                                        </label>
+                                    </div>
+                                    <div class="{{status_order[3]}}">
+                                        <div class="wrap">
+                                        <div class="round">3</div>
+                                        <div class="bar"></div>
+                                        </div>
+                                        <label>
+                                            <span>发货</span>
+                                            <span>{{orderItem.order.consignTime}}</span>
+                                        </label>
+                                    </div>
+                                    <div class="{{status_order[4]}}">
+                                        <div class="wrap">
+                                        <div class="round">4</div>
+                                        <div class="bar"></div>
+                                        </div>
+                                        <label>
+                                            <span>确认收货</span>
+                                            <span>{{orderItem.order.endTime}}</span>
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="{{status_order[5]}}">
+                                        <div class="wrap">
+                                        <div class="round">5</div>
+                                        </div>
+                                        <label>
+                                            <span>交易完成</span>
+                                            <span>{{orderItem.order.endTime}}</span>
+                                        </label>
+                                    </div>
+                                    </div>
+                            </div>
+                            <div class="order-state">
+                                <p>当前订单状态：<span class="red">{{status[orderItem.order.status]}}</span></p>
+                                <p>提交订单15天后 自动确认收货</p>
+                            </div>
+                        </div>
+                        <div class="order-info">
+                            <h5>订单信息</h5>
+                            <p>收货地址：{{orderItem.order.receiverAreaName}}  </p>
+                            <p>订单单号：{{orderItem.order.orderId}}</p>
+                            <p>下单时间：{{orderItem.order.createTime}}</p>
+                            <p>支付时间：{{orderItem.order.createTime}}</p>
+                            <p>支付方式：{{payType[orderItem.order.paymentType]}}</p>
+                            <p>发货时间：{{orderItem.order.consignTime}}</p>
+                        </div>
+                        <div class="order-goods">
+                            <table class="sui-table">
+                                    <thead>
+                                        <th class="center" >商品</th>
+                                        <th class="center" >价格</th>
+                                        <th class="center" >数量</th>
+                                        <th class="center" >优惠</th>
+                                        <th class="center" >状态</th>
+                                    </thead>                                   
+                             
+                                <tbody ng-repeat="item in orderItem.orderItem track by $index"> 
+                                                           
+	                                    <tr>
+	                                        <td colspan="5">订单编号：{{orderItem.order.orderId}}</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <div class="typographic"><img src="{{item.picPath}}" width="82px" height="82px"/>
+	                                                    <span>包邮 {{item.title}}</span>
+	                                                    <span class="guige">规格：{{item.title}}</span>
+	                                                </div>
+	                                        </td>
+	                                        <td>
+	                                            <ul class="unstyled">
+	                                                    <li class="o-price">¥{{item.price}}</li>	
+	                                                    <li>¥{{item.price}}</li>											
+	                                                </ul>
+	                                        </td>
+	                                        <td>{{item.num}}</td>
+	                                        <td>无优惠</td>
+	                                        <td>{{status[orderItem.order.status]}}</td>
+	                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            <div class="order-price">
+                                <p>商品总金额：￥{{orderItem.order.payment}}</p>
+                                <p>运费金额： 免费用</p>
+                                <p>使用优惠券：无</p>
+                                <h4 class="red">实际支付：￥{{orderItem.order.payment}}</h4>
+                            </div>
+                            <div class="clearfix"></div>
+                        <!-- 广告位 -->
+                <div id="content_html" ng-include="'content_html.html'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- 底部栏位 -->
+  <div id="foot_html" ng-include="'foot_html.html'"></div>
+
+</html>

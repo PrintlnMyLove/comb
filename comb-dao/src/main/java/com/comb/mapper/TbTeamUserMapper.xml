@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.comb.mapper.TbTeamUserMapper" >
+  <resultMap id="BaseResultMap" type="com.comb.pojo.TbTeamUser" >
+    <id column="seller_id" property="sellerId" jdbcType="VARCHAR" />
+    <result column="team_name" property="teamName" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="address_detail" property="addressDetail" jdbcType="VARCHAR" />
+    <result column="linkman_name" property="linkmanName" jdbcType="VARCHAR" />
+    <result column="linkman_qq" property="linkmanQq" jdbcType="VARCHAR" />
+    <result column="linkman_mobile" property="linkmanMobile" jdbcType="VARCHAR" />
+    <result column="linkman_email" property="linkmanEmail" jdbcType="VARCHAR" />
+    <result column="mumber" property="mumber" jdbcType="VARCHAR" />
+    <result column="logo_pic" property="logoPic" jdbcType="VARCHAR" />
+    <result column="brief" property="brief" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="leader_id" property="leaderId" jdbcType="VARCHAR" />
+    <result column="FileData" property="filedata" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    seller_id, team_name, nick_name, password, email, status, address_detail, linkman_name, 
+    linkman_qq, linkman_mobile, linkman_email, mumber, logo_pic, brief, create_time, 
+    leader_id, FileData
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.comb.pojo.TbTeamUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_team_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_team_user
+    where seller_id = #{sellerId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_team_user
+    where seller_id = #{sellerId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.comb.pojo.TbTeamUserExample" >
+    delete from tb_team_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.comb.pojo.TbTeamUser" >
+    insert into tb_team_user (seller_id, team_name, nick_name, 
+      password, email, status, 
+      address_detail, linkman_name, linkman_qq, 
+      linkman_mobile, linkman_email, mumber, 
+      logo_pic, brief, create_time, 
+      leader_id, FileData)
+    values (#{sellerId,jdbcType=VARCHAR}, #{teamName,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{addressDetail,jdbcType=VARCHAR}, #{linkmanName,jdbcType=VARCHAR}, #{linkmanQq,jdbcType=VARCHAR}, 
+      #{linkmanMobile,jdbcType=VARCHAR}, #{linkmanEmail,jdbcType=VARCHAR}, #{mumber,jdbcType=VARCHAR}, 
+      #{logoPic,jdbcType=VARCHAR}, #{brief,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{leaderId,jdbcType=VARCHAR}, #{filedata,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.comb.pojo.TbTeamUser" >
+    insert into tb_team_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sellerId != null" >
+        seller_id,
+      </if>
+      <if test="teamName != null" >
+        team_name,
+      </if>
+      <if test="nickName != null" >
+        nick_name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="addressDetail != null" >
+        address_detail,
+      </if>
+      <if test="linkmanName != null" >
+        linkman_name,
+      </if>
+      <if test="linkmanQq != null" >
+        linkman_qq,
+      </if>
+      <if test="linkmanMobile != null" >
+        linkman_mobile,
+      </if>
+      <if test="linkmanEmail != null" >
+        linkman_email,
+      </if>
+      <if test="mumber != null" >
+        mumber,
+      </if>
+      <if test="logoPic != null" >
+        logo_pic,
+      </if>
+      <if test="brief != null" >
+        brief,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="leaderId != null" >
+        leader_id,
+      </if>
+      <if test="filedata != null" >
+        FileData,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sellerId != null" >
+        #{sellerId,jdbcType=VARCHAR},
+      </if>
+      <if test="teamName != null" >
+        #{teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="addressDetail != null" >
+        #{addressDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanName != null" >
+        #{linkmanName,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanQq != null" >
+        #{linkmanQq,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanMobile != null" >
+        #{linkmanMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanEmail != null" >
+        #{linkmanEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="mumber != null" >
+        #{mumber,jdbcType=VARCHAR},
+      </if>
+      <if test="logoPic != null" >
+        #{logoPic,jdbcType=VARCHAR},
+      </if>
+      <if test="brief != null" >
+        #{brief,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leaderId != null" >
+        #{leaderId,jdbcType=VARCHAR},
+      </if>
+      <if test="filedata != null" >
+        #{filedata,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.comb.pojo.TbTeamUserExample" resultType="java.lang.Integer" >
+    select count(*) from tb_team_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_team_user
+    <set >
+      <if test="record.sellerId != null" >
+        seller_id = #{record.sellerId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.teamName != null" >
+        team_name = #{record.teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nickName != null" >
+        nick_name = #{record.nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addressDetail != null" >
+        address_detail = #{record.addressDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkmanName != null" >
+        linkman_name = #{record.linkmanName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkmanQq != null" >
+        linkman_qq = #{record.linkmanQq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkmanMobile != null" >
+        linkman_mobile = #{record.linkmanMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkmanEmail != null" >
+        linkman_email = #{record.linkmanEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mumber != null" >
+        mumber = #{record.mumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.logoPic != null" >
+        logo_pic = #{record.logoPic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.brief != null" >
+        brief = #{record.brief,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.leaderId != null" >
+        leader_id = #{record.leaderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filedata != null" >
+        FileData = #{record.filedata,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_team_user
+    set seller_id = #{record.sellerId,jdbcType=VARCHAR},
+      team_name = #{record.teamName,jdbcType=VARCHAR},
+      nick_name = #{record.nickName,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=VARCHAR},
+      address_detail = #{record.addressDetail,jdbcType=VARCHAR},
+      linkman_name = #{record.linkmanName,jdbcType=VARCHAR},
+      linkman_qq = #{record.linkmanQq,jdbcType=VARCHAR},
+      linkman_mobile = #{record.linkmanMobile,jdbcType=VARCHAR},
+      linkman_email = #{record.linkmanEmail,jdbcType=VARCHAR},
+      mumber = #{record.mumber,jdbcType=VARCHAR},
+      logo_pic = #{record.logoPic,jdbcType=VARCHAR},
+      brief = #{record.brief,jdbcType=VARCHAR},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      leader_id = #{record.leaderId,jdbcType=VARCHAR},
+      FileData = #{record.filedata,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.comb.pojo.TbTeamUser" >
+    update tb_team_user
+    <set >
+      <if test="teamName != null" >
+        team_name = #{teamName,jdbcType=VARCHAR},
+      </if>
+      <if test="nickName != null" >
+        nick_name = #{nickName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="addressDetail != null" >
+        address_detail = #{addressDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanName != null" >
+        linkman_name = #{linkmanName,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanQq != null" >
+        linkman_qq = #{linkmanQq,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanMobile != null" >
+        linkman_mobile = #{linkmanMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="linkmanEmail != null" >
+        linkman_email = #{linkmanEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="mumber != null" >
+        mumber = #{mumber,jdbcType=VARCHAR},
+      </if>
+      <if test="logoPic != null" >
+        logo_pic = #{logoPic,jdbcType=VARCHAR},
+      </if>
+      <if test="brief != null" >
+        brief = #{brief,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leaderId != null" >
+        leader_id = #{leaderId,jdbcType=VARCHAR},
+      </if>
+      <if test="filedata != null" >
+        FileData = #{filedata,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where seller_id = #{sellerId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.comb.pojo.TbTeamUser" >
+    update tb_team_user
+    set team_name = #{teamName,jdbcType=VARCHAR},
+      nick_name = #{nickName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      address_detail = #{addressDetail,jdbcType=VARCHAR},
+      linkman_name = #{linkmanName,jdbcType=VARCHAR},
+      linkman_qq = #{linkmanQq,jdbcType=VARCHAR},
+      linkman_mobile = #{linkmanMobile,jdbcType=VARCHAR},
+      linkman_email = #{linkmanEmail,jdbcType=VARCHAR},
+      mumber = #{mumber,jdbcType=VARCHAR},
+      logo_pic = #{logoPic,jdbcType=VARCHAR},
+      brief = #{brief,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      leader_id = #{leaderId,jdbcType=VARCHAR},
+      FileData = #{filedata,jdbcType=VARCHAR}
+    where seller_id = #{sellerId,jdbcType=VARCHAR}
+  </update>
+</mapper>
