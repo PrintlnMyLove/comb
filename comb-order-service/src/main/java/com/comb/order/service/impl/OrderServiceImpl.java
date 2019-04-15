@@ -94,7 +94,7 @@ public class OrderServiceImpl implements OrderService {
 			tbOrder.setReceiverMobile(order.getReceiverMobile());//收货人电话
 			tbOrder.setReceiver(order.getReceiver());//收货人
 			tbOrder.setSourceType(order.getSourceType());//订单来源
-			tbOrder.setSellerId(order.getSellerId());//商家ID
+			tbOrder.setSellerId(cart.getSellerId());//商家ID
 			
 			double money=0;//合计数
 			//循环购物车中每条明细记录

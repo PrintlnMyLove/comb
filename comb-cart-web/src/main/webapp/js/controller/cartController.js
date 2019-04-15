@@ -67,7 +67,6 @@ app.controller('cartController',function($scope,cartService,addressService){
 		$scope.order.receiverAreaName=$scope.address.address;//地址
 		$scope.order.receiverMobile=$scope.address.mobile;//手机
 		$scope.order.receiver=$scope.address.contact;//联系人
-		
 		cartService.submitOrder( $scope.order ).success(
 			function(response){
 				//alert(response.message);
