@@ -11,4 +11,5 @@
     <context:property-placeholder location="classpath*:properties/*.properties" />
     <dubbo:registry protocol="zookeeper"  address="${address}"/>
     
+    
 </beans>
