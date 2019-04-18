@@ -26,7 +26,13 @@ import org.springframework.data.solr.core.query.result.HighlightEntry.Highlight;
 import org.springframework.data.solr.core.query.result.HighlightPage;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.comb.mapper.TbGoodsMapper;
+import com.comb.mapper.TbTeamCheckMapper;
+import com.comb.pojo.TbGoods;
 import com.comb.pojo.TbItem;
+import com.comb.pojo.TbTeamCheck;
+import com.comb.pojo.TbTeamCheckExample;
+import com.comb.pojo.TbTeamCheckExample.Criterion;
 import com.comb.search.service.ItemSearchService;
 /**
  * 
@@ -38,6 +44,9 @@ public class ItemSearchServiceImpl implements ItemSearchService {
 
 	@Autowired
 	private SolrTemplate solrTemplate;
+	
+	@Autowired
+	private TbTeamCheckMapper teamCheckMapper;
 	
 	@Override
 	public Map search(Map searchMap) {
@@ -256,6 +265,20 @@ public class ItemSearchServiceImpl implements ItemSearchService {
 		query.addCriteria(criteria);		
 		solrTemplate.delete(query);
 		solrTemplate.commit();
+	}
+
+
+	@Autowired
+	private TbGoodsMapper goodsMapper;
+	
+	@Override
+	public void pvConunt(Long goodsId) {
+		TbGoods goods = goodsMapper.selectByPrimaryKey(goodsId);
+		TbTeamCheck tbTeamCheck = teamCheckMapper.selectByPrimaryKey(goods.getSellerId());
+		Long count = tbTeamCheck.getPv();
+		count++;
+		tbTeamCheck.setPv(count);
+		teamCheckMapper.updateByPrimaryKey(tbTeamCheck);
 	}
 	
 	

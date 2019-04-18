@@ -27,4 +27,6 @@ public interface ItemSearchService {
 	 * @param goodsIds  (SPU)
 	 */
 	public void deleteByGoodsIds(List goodsIds);
+	
+	public void pvConunt(Long sellerId);
 }

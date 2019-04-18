@@ -123,4 +123,12 @@ app.controller('searchController',function($scope,$location,searchService){
 		$scope.search();//查询
 	}
 	
+	$scope.pvConunt=function(goodsId){
+		searchService.pvConunt(goodsId).success(
+				function(response){
+					
+				    
+		})
+	}
+	
 });

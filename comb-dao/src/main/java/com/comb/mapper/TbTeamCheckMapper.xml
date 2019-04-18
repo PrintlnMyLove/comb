@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.comb.mapper.TbTeamCheckMapper" >
+  <resultMap id="BaseResultMap" type="com.comb.pojo.TbTeamCheck" >
+    <id column="team_id" property="teamId" jdbcType="VARCHAR" />
+    <result column="month_order" property="monthOrder" jdbcType="BIGINT" />
+    <result column="year_order" property="yearOrder" jdbcType="BIGINT" />
+    <result column="pv" property="pv" jdbcType="BIGINT" />
+    <result column="star" property="star" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    team_id, month_order, year_order, pv, star
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.comb.pojo.TbTeamCheckExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_team_check
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_team_check
+    where team_id = #{teamId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_team_check
+    where team_id = #{teamId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.comb.pojo.TbTeamCheckExample" >
+    delete from tb_team_check
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.comb.pojo.TbTeamCheck" >
+    insert into tb_team_check (team_id, month_order, year_order, 
+      pv, star)
+    values (#{teamId,jdbcType=VARCHAR}, #{monthOrder,jdbcType=BIGINT}, #{yearOrder,jdbcType=BIGINT}, 
+      #{pv,jdbcType=BIGINT}, #{star,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.comb.pojo.TbTeamCheck" >
+    insert into tb_team_check
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="teamId != null" >
+        team_id,
+      </if>
+      <if test="monthOrder != null" >
+        month_order,
+      </if>
+      <if test="yearOrder != null" >
+        year_order,
+      </if>
+      <if test="pv != null" >
+        pv,
+      </if>
+      <if test="star != null" >
+        star,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="teamId != null" >
+        #{teamId,jdbcType=VARCHAR},
+      </if>
+      <if test="monthOrder != null" >
+        #{monthOrder,jdbcType=BIGINT},
+      </if>
+      <if test="yearOrder != null" >
+        #{yearOrder,jdbcType=BIGINT},
+      </if>
+      <if test="pv != null" >
+        #{pv,jdbcType=BIGINT},
+      </if>
+      <if test="star != null" >
+        #{star,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.comb.pojo.TbTeamCheckExample" resultType="java.lang.Integer" >
+    select count(*) from tb_team_check
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tb_team_check
+    <set >
+      <if test="record.teamId != null" >
+        team_id = #{record.teamId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.monthOrder != null" >
+        month_order = #{record.monthOrder,jdbcType=BIGINT},
+      </if>
+      <if test="record.yearOrder != null" >
+        year_order = #{record.yearOrder,jdbcType=BIGINT},
+      </if>
+      <if test="record.pv != null" >
+        pv = #{record.pv,jdbcType=BIGINT},
+      </if>
+      <if test="record.star != null" >
+        star = #{record.star,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tb_team_check
+    set team_id = #{record.teamId,jdbcType=VARCHAR},
+      month_order = #{record.monthOrder,jdbcType=BIGINT},
+      year_order = #{record.yearOrder,jdbcType=BIGINT},
+      pv = #{record.pv,jdbcType=BIGINT},
+      star = #{record.star,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.comb.pojo.TbTeamCheck" >
+    update tb_team_check
+    <set >
+      <if test="monthOrder != null" >
+        month_order = #{monthOrder,jdbcType=BIGINT},
+      </if>
+      <if test="yearOrder != null" >
+        year_order = #{yearOrder,jdbcType=BIGINT},
+      </if>
+      <if test="pv != null" >
+        pv = #{pv,jdbcType=BIGINT},
+      </if>
+      <if test="star != null" >
+        star = #{star,jdbcType=BIGINT},
+      </if>
+    </set>
+    where team_id = #{teamId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.comb.pojo.TbTeamCheck" >
+    update tb_team_check
+    set month_order = #{monthOrder,jdbcType=BIGINT},
+      year_order = #{yearOrder,jdbcType=BIGINT},
+      pv = #{pv,jdbcType=BIGINT},
+      star = #{star,jdbcType=BIGINT}
+    where team_id = #{teamId,jdbcType=VARCHAR}
+  </update>
+</mapper>

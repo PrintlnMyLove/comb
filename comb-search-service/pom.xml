@@ -115,7 +115,12 @@
 		<artifactId>activemq-client</artifactId>
 		<version>5.13.4</version>
 	 </dependency>
-	
+
+	<dependency>
+		<groupId>com.comb</groupId>
+		<artifactId>comb-dao</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
   </dependencies>
   
   <build>  
