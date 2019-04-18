@@ -12,5 +12,11 @@
   		<artifactId>comb-pojo</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
+  	<dependency>
+  		<groupId>com.comb</groupId>
+  		<artifactId>comb-parent</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  		<type>pom</type>
+  	</dependency>
   </dependencies>
 </project>
