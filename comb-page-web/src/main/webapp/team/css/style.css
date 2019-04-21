@@ -263,6 +263,48 @@ li.nav-item {
     padding: 17vw 0 0 12vw;
     box-sizing: border-box;
 }
+
+#Login-menu{
+    text-align: center;
+    color: #fff;
+}
+#Login-menu #left-ensconce{
+    width: 50px;
+    height: 240px;
+    background: #20343c;
+    float: left;
+    border: 1px solid #000;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    position: fixed;
+    left: 0;
+    top: 300px;
+    z-index: 1000;
+    opacity: 0.85;
+}
+#Login-menu #right-ensconce{
+    width: 50px;
+    height: 240px;
+    background: #20343c;
+    float: right;
+    border: 1px solid #000;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    position: fixed;
+    right: 0;
+    top: 300px;
+    z-index: 1000;
+    opacity: 0.85;
+}
+#Login-menu #left-ensconce h2 img {
+    width: 52%;
+}
+#Login-menu #right-ensconce h2 img {
+    width: 52%;
+}
+#Login-menu a{
+    color: #fff;
+}
 /*-- video section --*/
 
 .video-button {
@@ -1199,5 +1241,5 @@ p.para-w3-agileits {
 .w3l-footer {
     padding: 1em 1em;
 }
-}
+
 /*-- //responsive design --*/

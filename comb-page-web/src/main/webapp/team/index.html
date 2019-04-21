@@ -6,7 +6,7 @@
     <title>Home</title>
     <!--meta tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta name="keywords" content=""/>
     <script>
         addEventListener("load", function () {
@@ -67,6 +67,9 @@
                     <li class="nav-item">
                         <a class="nav-link scroll hvr-overline-from-center scroll" href="#Join" style="font-size: 120%"> 加入我们 </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll hvr-overline-from-center scroll" href="#Login" style="font-size: 120%"> 登入入口</a>
+                    </li>
 
                 </ul>
             </div>
@@ -86,7 +89,6 @@
 			        <!--<i class="fas fa-play-circle"></i>-->观看介绍视屏
 		        </a>
             </div>
-            <h4><a href="">普通使用平台</a></h4>	<h4><a href="">创业团队使用平台</a></h4>
         </div>
         <!-- video section -->
 
@@ -98,7 +100,22 @@
     </div>
 	</div>
     <!-- //banner -->
-	
+
+    <div id="Login-menu">
+        <div id="left-ensconce">
+            <h2>
+                <img src="images/show-left.png" alt="">
+                <a href="代填写">团队登入</a>
+            </h2>
+        </div>
+        <div id="right-ensconce">
+            <h2>
+                <img src="images/show-right.png" alt="">
+                <a href="代填写">学生登入</a>
+            </h2>
+        </div>
+    </div>
+
     <!-- about -->
     <div class="about pt-5" id="about">
         <div class="main-about">
@@ -560,26 +577,24 @@
 
 
     <!-- footer -->
-    <footer>
+    <footer id="Login">
         <div class="w3ls-footer-grids pb-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 w3l-footer">
-                        <h3 class="mb-sm-3 mb-2">技术支持</h3>
-                         <p class="para-w3-agileits">请联系信管王庆棒同学</p>
-
+                        <br>
+                        <h3 class="mb-sm-3 mb-2">登入入口</h3>
+                        <p><a href="代填" class="scroll nav-w3-l" style="font-size: 150%">团队登入</a></p>
+                        <p><a href="代填" class="scroll nav-w3-l" style="font-size: 150%">用户登入</a></p>
                     </div>
                     <div class="col-md-4 w3l-footer my-md-0 my-4 text-center">
 						<h2><a class="navbar-brand" href="index.html">COMB</a></h2>
                     </div>
 					
-                    <div class="col-md-4 w3l-footer">
+                    <div class="col-md-4 w3l-footer" style="float: right;">
                         <h3 class="mb-sm-3 mb-2">Navigation</h3>
                         <div class="nav-w3-l">
                             <ul>
-                                <li>
-                                    <a href="index.html" class="scroll">Home</a>
-                                </li>
                                 <li class="mt-2">
                                     <a href="#about" class="scroll">About</a>
                                 </li>

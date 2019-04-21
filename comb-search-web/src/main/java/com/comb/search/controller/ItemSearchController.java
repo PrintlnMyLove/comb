@@ -41,8 +41,8 @@ public class ItemSearchController {
 	@RequestMapping("/pvConunt")
 	public void pvConunt(Long goodsId) {
 		
-		if(util.CookieUtil.getCookieValue(request,"count", "UTF-8") == null || util.CookieUtil.getCookieValue(request,"count", "UTF-8") == "") {
-			util.CookieUtil.setCookie(request, response, "count", "aaaaa", 3600*10, "UTF-8");
+		if(util.CookieUtil.getCookieValue(request,goodsId.toString(), "UTF-8") == null || util.CookieUtil.getCookieValue(request,"count", "UTF-8") == "") {
+			util.CookieUtil.setCookie(request, response, goodsId.toString(), "aaaaa", 3600*10, "UTF-8");
 		}else {
 			return;
 		}
