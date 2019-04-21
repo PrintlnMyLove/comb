@@ -9,4 +9,8 @@ app.service('loginService',function($http){
 		return $http.get('../teamUser/updataPassword.do?oldPassword='+oldPassword+"&password="+password+"&id="+id);
 	}
 	
+	this.Performance=function(){
+		return $http.get('../login/performance.do');
+	}
+	
 });

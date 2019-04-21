@@ -264,11 +264,11 @@ li.nav-item {
     box-sizing: border-box;
 }
 
-#Login-menu{
+.Login-menu{
     text-align: center;
     color: #fff;
 }
-#Login-menu #left-ensconce{
+.Login-menu .left-ensconce{
     width: 50px;
     height: 240px;
     background: #20343c;
@@ -282,7 +282,7 @@ li.nav-item {
     z-index: 1000;
     opacity: 0.85;
 }
-#Login-menu #right-ensconce{
+.Login-menu .right-ensconce{
     width: 50px;
     height: 240px;
     background: #20343c;
@@ -296,13 +296,13 @@ li.nav-item {
     z-index: 1000;
     opacity: 0.85;
 }
-#Login-menu #left-ensconce h2 img {
+.Login-menu .left-ensconce h2 img {
     width: 52%;
 }
-#Login-menu #right-ensconce h2 img {
+.Login-menu .right-ensconce h2 img {
     width: 52%;
 }
-#Login-menu a{
+.Login-menu a{
     color: #fff;
 }
 /*-- video section --*/

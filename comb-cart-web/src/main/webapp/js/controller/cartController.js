@@ -68,30 +68,29 @@ app.controller('cartController',function($scope,cartService,addressService){
 	//var orderCount = [];
 	var orderCount = [];
 
-	$scope.orderCount=function(){
-		for(cart in $scope.cartList){
-			for(item in cart){
-				obj = {num:item.num, sellerId:item.sellerId};
-				orderCount.push(obj);
-
-			}
-		}
-
-		alert(orderCount);
-		cartService.orderCount(orderCount).success(
-				function(response){
-
-				}
-
-		)
-	}
+//	$scope.orderCount=function(){
+//		for(cart in $scope.cartList){
+//			for(item in cart){
+//				obj = {orderNum:item.num, sellerId:item.sellerId};
+//				orderCount.push(obj);
+//
+//			}
+//		}
+//
+//		cartService.orderCount(orderCount).success(
+//				function(response){
+//
+//				}
+//
+//		)
+//	}
 
 	//保存订单
 	$scope.submitOrder=function(){
 		$scope.order.receiverAreaName=$scope.address.address;//地址
 		$scope.order.receiverMobile=$scope.address.mobile;//手机
 		$scope.order.receiver=$scope.address.contact;//联系人
-		$scope.orderCount();
+//		$scope.orderCount();
 		cartService.submitOrder( $scope.order ).success(
 		function(response){
 				//alert(response.message);

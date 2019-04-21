@@ -2,6 +2,8 @@ package com.comb.publish.service;
 
 
 import java.util.List;
+
+import com.comb.pojo.TbTeamCheck;
 import com.comb.pojo.TbTeamUser;
 
 import entity.PageResult;
@@ -80,4 +82,11 @@ public interface TeamUserService {
 	 * @param password
 	 */
 	public void updataPassword(String id, String password);
+	
+	/**
+	 * 获取业绩
+	 * @param loginName
+	 * @return
+	 */
+	public TbTeamCheck showPerformance(String loginName);
 }

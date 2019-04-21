@@ -1,5 +1,6 @@
 package com.comb.cart.controller;
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -104,17 +105,6 @@ public class CartController {
 		}
 		
 		
-	}
-
-
-	@RequestMapping("/orderCount")
-	public void orderCount(@RequestBody List<order_Count> orderCount) {
-
-		try {
-			cartService.orderCount(orderCount);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 	
 	

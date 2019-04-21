@@ -13,12 +13,14 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.comb.mapper.TbOrderItemMapper;
 import com.comb.mapper.TbOrderMapper;
 import com.comb.mapper.TbPayLogMapper;
+import com.comb.mapper.TbTeamCheckMapper;
 import com.comb.order.service.OrderService;
 import com.comb.pojo.TbOrder;
 import com.comb.pojo.TbOrderExample;
 import com.comb.pojo.TbOrderExample.Criteria;
 import com.comb.pojo.TbOrderItem;
 import com.comb.pojo.TbPayLog;
+import com.comb.pojo.TbTeamCheck;
 import com.comb.pojogroup.Cart;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -69,6 +71,9 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	private TbOrderItemMapper orderItemMapper;
 	
+	@Autowired
+	private TbTeamCheckMapper teamCheckMapper;
+	
 	/**
 	 * 增加
 	 */
@@ -106,6 +111,15 @@ public class OrderServiceImpl implements OrderService {
 				orderItem.setSellerId(cart.getSellerId());//商家ID
 				orderItemMapper.insert(orderItem);				
 				money+=orderItem.getTotalFee().doubleValue();
+				TbTeamCheck teamCheck = teamCheckMapper.selectByPrimaryKey(cart.getSellerId());
+				Long MonthOrder =	teamCheck.getMonthOrder();
+				Long YearOrder = teamCheck.getYearOrder();
+				MonthOrder += orderItem.getNum();
+				YearOrder += orderItem.getNum();
+				teamCheck.setMonthOrder(MonthOrder);
+				teamCheck.setYearOrder(YearOrder);
+				teamCheckMapper.updateByPrimaryKey(teamCheck);
+				
 			}
 			
 			tbOrder.setPayment(new BigDecimal(money));//合计

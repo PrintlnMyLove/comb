@@ -1,5 +1,7 @@
 package com.comb.cart.service;
 
+
+
 import java.util.List;
 
 import com.comb.pojogroup.Cart;
@@ -43,7 +45,5 @@ public void saveCartListToRedis(String username,List<Cart> cartList);
 		 */
 public List<Cart> mergeCartList(List<Cart> cartList1,List<Cart> cartList2);
 
-
-public void orderCount(List<order_Count> orderCount);
 		 
 }

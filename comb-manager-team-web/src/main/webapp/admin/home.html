@@ -9,12 +9,20 @@
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport"> 
     <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
 
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js">  </script>
+
     <link rel="stylesheet" href="../plugins/adminLTE/css/AdminLTE.css">
     <link rel="stylesheet" href="../plugins/adminLTE/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    
+    <script type="text/javascript" src="../js/base.js"></script>
+    <script type="text/javascript" src="../js/service/loginService.js"></script>
+  	<script type="text/javascript" src="../js/controller/indexController.js"></script>
+    
+   
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-app="comb" ng-controller="indexController" ng-init="showPerformance()">
 
    <!-- 内容区域 -->
 
@@ -41,14 +49,14 @@
                         <!-- small box -->
                         <div class="small-box bg-aqua">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3>{{performance.monthOrder}}</h3>
 
-                                <p>新订单</p>
+                                <p>月订单总数</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="new_order.html" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="order.html" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -56,14 +64,14 @@
                         <!-- small box -->
                         <div class="small-box bg-green">
                             <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                <h3>{{((performance.monthOrder/performance.pv)*100).toFixed(1)}}<sup style="font-size: 20px">%</sup></h3>
 
                                 <p>转化率</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="all-ad-statistics-list.html" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -71,9 +79,9 @@
                         <!-- small box -->
                         <div class="small-box bg-yellow">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3>{{performance.yearOrder}}</h3>
 
-                                <p>新注册用户</p>
+                                <p>年订单数</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
@@ -86,14 +94,14 @@
                         <!-- small box -->
                         <div class="small-box bg-red">
                             <div class="inner">
-                                <h3>65</h3>
+                                <h3>{{performance.pv}}</h3>
 
-                                <p>日PV</p>
+                                <p>月PV(浏览量)</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            <a href="all-ad-statistics-list.html" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="#" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

@@ -10,7 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.comb.mapper.TbTeamCheckMapper;
 import com.comb.mapper.TbTeamUserMapper;
+import com.comb.pojo.TbTeamCheck;
 import com.comb.pojo.TbTeamUser;
 import com.comb.pojo.TbTeamUserExample;
 import com.comb.pojo.TbTeamUserExample.Criteria;
@@ -29,6 +31,9 @@ public class TeamUserServiceImpl implements TeamUserService {
 
 	@Autowired
 	private TbTeamUserMapper teamUserMapper;
+	
+	@Autowired
+	private TbTeamCheckMapper teamCheckMapper;
 	
 	/**
 	 * 查询全部
@@ -172,6 +177,13 @@ public class TeamUserServiceImpl implements TeamUserService {
 			TbTeamUser teamUser = teamUserMapper.selectByPrimaryKey(id);
 			teamUser.setPassword(password);
 			teamUserMapper.updateByPrimaryKey(teamUser);	
+		}
+
+		
+		@Override
+		public TbTeamCheck showPerformance(String loginName) {
+			TbTeamCheck teamCheck = teamCheckMapper.selectByPrimaryKey(loginName);
+			return teamCheck;
 		}
 	
 }

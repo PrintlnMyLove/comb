@@ -7,4 +7,13 @@ app.controller('indexController',function($scope,loginService){
 			}
 		);		
 	}
+	
+	$scope.showPerformance=function(){
+		loginService.Performance().success(
+				function(response){
+					$scope.performance=response;
+				}
+		);
+		
+	}
 });
