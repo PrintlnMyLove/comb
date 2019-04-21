@@ -3,6 +3,7 @@ package com.comb.cart.service;
 import java.util.List;
 
 import com.comb.pojogroup.Cart;
+import com.comb.pojogroup.order_Count;
 
 /**
  * 购物车接口
@@ -41,5 +42,8 @@ public void saveCartListToRedis(String username,List<Cart> cartList);
 		 * @return
 		 */
 public List<Cart> mergeCartList(List<Cart> cartList1,List<Cart> cartList2);
+
+
+public void orderCount(List<order_Count> orderCount);
 		 
 }

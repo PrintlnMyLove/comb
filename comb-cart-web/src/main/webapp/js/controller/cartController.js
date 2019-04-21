@@ -1,5 +1,7 @@
 //购物车控制层
 app.controller('cartController',function($scope,cartService,addressService){
+
+
 	//查询购物车列表
 	$scope.findCartList=function(){
 		cartService.findCartList().success(
@@ -61,14 +63,37 @@ app.controller('cartController',function($scope,cartService,addressService){
 	$scope.selectPayType=function(type){
 		$scope.order.paymentType=type;
 	}
-	
+
+
+	//var orderCount = [];
+	var orderCount = [];
+
+	$scope.orderCount=function(){
+		for(cart in $scope.cartList){
+			for(item in cart){
+				obj = {num:item.num, sellerId:item.sellerId};
+				orderCount.push(obj);
+
+			}
+		}
+
+		alert(orderCount);
+		cartService.orderCount(orderCount).success(
+				function(response){
+
+				}
+
+		)
+	}
+
 	//保存订单
 	$scope.submitOrder=function(){
 		$scope.order.receiverAreaName=$scope.address.address;//地址
 		$scope.order.receiverMobile=$scope.address.mobile;//手机
 		$scope.order.receiver=$scope.address.contact;//联系人
+		$scope.orderCount();
 		cartService.submitOrder( $scope.order ).success(
-			function(response){
+		function(response){
 				//alert(response.message);
 				if(response.success){
 					//页面跳转
@@ -136,4 +161,6 @@ app.controller('cartController',function($scope,cartService,addressService){
 			}
 		);
 	}
+
+
 });

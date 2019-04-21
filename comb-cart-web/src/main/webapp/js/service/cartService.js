@@ -40,5 +40,10 @@ app.service('cartService',function($http){
 	this.showName=function(){
 		return $http.get('login/name.do');		
 	}
-	
+
+	this.orderCount=function(orderCount){
+		return $http.post('../cart/orderCount.do',orderCount);
+	}
 });
+
+

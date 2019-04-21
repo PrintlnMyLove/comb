@@ -5,11 +5,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.comb.pojogroup.order_Count;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
@@ -105,6 +104,17 @@ public class CartController {
 		}
 		
 		
+	}
+
+
+	@RequestMapping("/orderCount")
+	public void orderCount(@RequestBody List<order_Count> orderCount) {
+
+		try {
+			cartService.orderCount(orderCount);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	

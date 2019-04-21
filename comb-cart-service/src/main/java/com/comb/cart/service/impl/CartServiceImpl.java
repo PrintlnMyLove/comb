@@ -6,6 +6,11 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.comb.mapper.TbGoodsMapper;
+import com.comb.mapper.TbTeamCheckMapper;
+import com.comb.pojo.TbGoods;
+import com.comb.pojo.TbTeamCheck;
+import com.comb.pojogroup.order_Count;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 
@@ -21,6 +26,9 @@ public class CartServiceImpl implements CartService {
 
 	@Autowired
 	private TbItemMapper itemMapper;
+
+	@Autowired
+	private TbTeamCheckMapper teamCheckMapper;
 	
 	
 	@Override
@@ -157,5 +165,29 @@ public class CartServiceImpl implements CartService {
 			}
 		}
 		return cartList1;		
+	}
+
+	@Autowired
+	private TbGoodsMapper goodsMapper;
+
+
+	@Override
+	public void orderCount(List<order_Count> orderCount) {
+
+		try {
+			for(order_Count list : orderCount){
+				TbTeamCheck tbTeamCheck = teamCheckMapper.selectByPrimaryKey(list.getSellerId());
+				Long MonthOrder =	tbTeamCheck.getMonthOrder();
+				Long YearOrder = tbTeamCheck.getYearOrder();
+				MonthOrder += list.getOrderNum();
+				YearOrder += list.getOrderNum();
+				tbTeamCheck.setMonthOrder(MonthOrder);
+				tbTeamCheck.setYearOrder(YearOrder);
+				teamCheckMapper.updateByPrimaryKey(tbTeamCheck);
+				System.out.println("这次保存的是"+list.getSellerId()+"数量"+list.getOrderNum());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
