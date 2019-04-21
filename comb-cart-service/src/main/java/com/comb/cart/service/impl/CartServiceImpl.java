@@ -9,7 +9,6 @@ import java.util.List;
 import com.comb.mapper.TbGoodsMapper;
 import com.comb.mapper.TbTeamCheckMapper;
 import com.comb.pojo.TbTeamCheck;
-import com.comb.pojogroup.order_Count;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 

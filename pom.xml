@@ -294,9 +294,9 @@
 		<module>comb-cart-web</module>
 		<module>comb-order-interface</module>
 		<module>comb-order-service</module>
-		<module>comb-seckill-interface</module>
-		<module>comb-seckill-service</module>
-		<module>comb-seckill-web</module>
+		<module>comb-activities-interface</module>
+		<module>comb-activities-service</module>
+		<module>comb-activities-web</module>
 		<module>comb-pay-interface</module>
 		<module>comb-pay-service</module>
 		<module>comb-task-service</module>
