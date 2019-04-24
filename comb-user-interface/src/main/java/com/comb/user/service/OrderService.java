@@ -6,6 +6,7 @@ import com.comb.pojo.TbOrder;
 import com.comb.pojogroup.Order;
 
 import entity.PageResult;
+import entity.Result;
 
 /**
  * 
@@ -27,4 +28,10 @@ public interface OrderService {
 	public PageResult findPage(TbOrder order, int pageNum,int pageSize);
 	
 	public Order findOrder(String id);
+
+	/**
+	 * 评价数
+	 * @param star
+	 */
+	public void evaluation(int star, String sellerId);
 }

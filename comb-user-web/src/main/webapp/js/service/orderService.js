@@ -26,6 +26,10 @@ app.service('orderService',function($http){
 	//确认订单
 	this.ensure=function(id){
 		return $http.post('../order/ensure.do?id='+id);
-	}  
-	
+	}
+
+	this.evaluation=function(star,sellerId){
+		return $http.post('../order/evaluation.do?star='+star+'&sellerId='+sellerId);
+}
+
 });

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="comb-activities-interface" />
+        <module name="comb-activities-service" />
+        <module name="comb-activities-web" />
+        <module name="comb-cart-interface" />
+        <module name="comb-cart-service" />
+        <module name="comb-cart-web" />
+        <module name="comb-common" />
+        <module name="comb-content-interface" />
+        <module name="comb-content-service" />
+        <module name="comb-dao" />
+        <module name="comb-manager-school-web" />
+        <module name="comb-manager-team-web" />
+        <module name="comb-order-interface" />
+        <module name="comb-order-service" />
+        <module name="comb-page-interface" />
+        <module name="comb-page-service" />
+        <module name="comb-page-web" />
+        <module name="comb-pay-interface" />
+        <module name="comb-pay-service" />
+        <module name="comb-pojo" />
+        <module name="comb-portal-web" />
+        <module name="comb-publish-interface" />
+        <module name="comb-publish-service" />
+        <module name="comb-search-interface" />
+        <module name="comb-search-service" />
+        <module name="comb-search-web" />
+        <module name="comb-task-service" />
+        <module name="comb-user-interface" />
+        <module name="comb-user-service" />
+        <module name="comb-user-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="comb-solr-util" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

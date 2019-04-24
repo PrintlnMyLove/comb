@@ -8,11 +8,17 @@
     <title>我的订单</title>
     <link rel="icon" href="icon.ico" />
 
+
+
     <link rel="stylesheet" type="text/css" href="css/webbase.css" />
     <link rel="stylesheet" type="text/css" href="css/pages-seckillOrder.css" />
-    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-    
+
+	<script src="jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="js/evaluation.css">
+	<script src="js/evaluation.js"></script>
+
     <script type="text/javascript" src="plugins/angularjs/angular.min.js"></script>
 	<script type="text/javascript" src="js/base.js"></script>
 	<script type="text/javascript" src="js/service/loginService.js"></script>
@@ -125,12 +131,32 @@
 			                                       <tr ng-if="order.order.status == 5 || order.order.status == 6 || order.order.status == 7">
 		                                 				<td width="100%" class="center">
 			                                                <ul class="unstyled">
-																<li><a href="#" class="sui-btn btn-info" onclick="window.location.reload();">立即评价（暂未开通）</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;取消订单</li>	
-			                                                </ul>
+																<li><a href="#" class="sui-btn btn-info btn_evaluation"  ng-click="getTeam(orderList.order.sellerId)">立即评价</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;取消订单</li>
+																<div id="container">
+																	<div id="evaluate">
+																		<p>您好，请对我们的服务以及购买的商品进行评价</p>
+																		<br>
+																		<a href="javascript:click(1)" ng-click="check(1)"><img src="js/img/star.png" id="star1" onMouseOver="over(1)" onMouseOut="out(1)"/></a>
+																		&nbsp;
+																		<a href="javascript:click(2)" ng-click="check(2)"><img src="js/img/star.png" id="star2" onMouseOver="over(2)" onMouseOut="out(2)"/></a>
+																		&nbsp;
+																		<a href="javascript:click(3)" ng-click="check(3)"><img src="js/img/star.png" id="star3" onMouseOver="over(3)" onMouseOut="out(3)"/></a>
+																		&nbsp;
+																		<a href="javascript:click(4)" ng-click="check(4)"><img src="js/img/star.png" id="star4" onMouseOver="over(4)" onMouseOut="out(4)"/></a>
+																		&nbsp;
+																		<a href="javascript:click(5)" ng-click="check(5)"><img src="js/img/star.png" id="star5" onMouseOver="over(5)" onMouseOut="out(5)"/></a>
+																		<span id="message"></span>
+																		<br><br>
+																		<a href="#" class="close" ng-click="evaluation()">[关闭]</a>
+																		<br>
+																	</div>
+																</div>
+															</ul>
 			                                            </td>
 			                                       </tr>
 			                             </tbody>
 		                                </table>
+
 		                                
 	                                </div>
 	                                

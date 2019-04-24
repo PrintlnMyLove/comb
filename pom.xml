@@ -279,7 +279,6 @@
 		<module>comb-content-interface</module>
 		<module>comb-content-service</module>
 		<module>comb-portal-web</module>
-		<module>comb-solr-util</module>
 		<module>comb-search-interface</module>
 		<module>comb-search-service</module>
 		<module>comb-search-web</module>

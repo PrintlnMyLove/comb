@@ -7,10 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
     <title>待评价</title>
 
+    <script src="jquery-1.11.1.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/webbase.css" />
     <link rel="stylesheet" type="text/css" href="css/pages-seckillOrder.css" />
-    <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/evaluation.css">
+    <script src="js/evaluation.js"></script>
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+
     
     <script type="text/javascript" src="plugins/angularjs/angular.min.js"></script>
 	<script type="text/javascript" src="js/base.js"></script>
@@ -103,7 +108,26 @@
                                             </td>
                                             <td width="10%" class="center">
                                                 <ul class="unstyled">
-                                                    <li><a href="#" class="sui-btn btn-info">评价</a></li>
+                                                    <li><a href="#"  class="sui-btn btn-info btn_evaluation">评价</a></li>
+                                                    <!--<div id="container">
+                                                        <div id="evaluate">
+                                                            <p>您好，请对我们的服务以及购买的商品进行评价</p>
+                                                            <br>
+                                                            <a href="javascript:click(1)" ng-click="check(1)"><img src="img/star.png" id="star1" onMouseOver="over(1)" onMouseOut="out(1)"/></a>
+                                                            &nbsp;
+                                                            <a href="javascript:click(2)" ng-click="check(2)"><img src="img/star.png" id="star2" onMouseOver="over(2)" onMouseOut="out(2)" /></a>
+                                                            &nbsp;
+                                                            <a href="javascript:click(3)" ng-click="check(3)"><img src="img/star.png" id="star3" onMouseOver="over(3)" onMouseOut="out(3)" /></a>
+                                                            &nbsp;
+                                                            <a href="javascript:click(4)" ng-click="check(4)"><img src="img/star.png" id="star4" onMouseOver="over(4)" onMouseOut="out(4)"/></a>
+                                                            &nbsp;
+                                                            <a href="javascript:click(5)" ng-click="check(5)"><img src="img/star.png" id="star5" onMouseOver="over(5)" onMouseOut="out(5)"/></a>
+                                                            <span id="message"></span>
+                                                            <br><br>
+                                                            <a href="#" class="close" ng-click="evaluation()">[关闭]</a>
+                                                            <br>
+                                                        </div>
+                                                    </div>-->
                                                 </ul>
                                             </td>
                                         </tr>
@@ -153,6 +177,7 @@
                                             <td width="10%" class="center">
                                                 <ul class="unstyled">
                                                     <li><a href="#" class="sui-btn btn-info">评价</a></li>
+
                                                 </ul>
                                             </td>
                                         </tr>
@@ -189,5 +214,5 @@
      
     <!-- 底部栏位 -->
   <div id="foot_html" ng-include="'foot_html.html'"></div>
-
+    </div>
 </html>

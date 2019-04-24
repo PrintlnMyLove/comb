@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.comb.mapper.TbTeamCheckMapper;
+import com.comb.pojo.*;
+import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.comb.mapper.TbOrderItemMapper;
 import com.comb.mapper.TbOrderMapper;
 import com.comb.mapper.TbTeamUserMapper;
-import com.comb.pojo.TbOrder;
-import com.comb.pojo.TbOrderExample;
 import com.comb.pojo.TbOrderExample.Criteria;
-import com.comb.pojo.TbOrderItem;
-import com.comb.pojo.TbOrderItemExample;
-import com.comb.pojo.TbTeamUser;
 import com.comb.pojogroup.Order;
 import com.comb.user.service.OrderService;
 import com.github.pagehelper.Page;
@@ -40,6 +38,11 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Autowired
 	private TbTeamUserMapper teamUserMapper;
+
+	@Autowired
+	private TbTeamCheckMapper teamCheckMapper;
+
+
 	
 	/**
 	 * 查找订单列表
@@ -102,10 +105,18 @@ public class OrderServiceImpl implements OrderService{
 		order.setOrderItem(orderItemMapper.selectByExample(example));
 		return order;
 	}
-	
-	
-	
-	
+
+
+	@Override
+	public void evaluation(int star, String sellerId) {
+		TbTeamCheck tbTeamCheck = teamCheckMapper.selectByPrimaryKey(sellerId);
+		Long totalStar = tbTeamCheck.getStar();
+		totalStar += star;
+		tbTeamCheck.setStar(totalStar);
+		teamCheckMapper.updateByPrimaryKey(tbTeamCheck);
+	}
+
+
 	@Override
 	public PageResult findPage(TbOrder order, int pageNum, int pageSize) {
 		PageHelper.startPage(pageNum, pageSize);

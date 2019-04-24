@@ -26,14 +26,14 @@ public class orderController {
 
 	@Reference
 	private OrderService orderService;
-	
+
 	@RequestMapping("/findOrderList")
-	public List<Order> findOrderList(){			
+	public List<Order> findOrderList() {
 		//获取当前登录人账号
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		return orderService.findOrderList(username);
 	}
-	
+
 	@RequestMapping("/ensure")
 	public Result ensureOrder(String id) {
 		try {
@@ -44,29 +44,43 @@ public class orderController {
 			return new Result(false, "确认收货失败！");
 		}
 	}
-	
-	
-	
-	
+
+
 	/**
 	 * 查询+分页
+	 *
 	 * @param brand
 	 * @param page
 	 * @param rows
 	 * @return
 	 */
 	@RequestMapping("/search")
-	public PageResult search(@RequestBody TbOrder order, int page, int rows  ){
-		return orderService.findPage(order, page, rows);		
+	public PageResult search(@RequestBody TbOrder order, int page, int rows) {
+		return orderService.findPage(order, page, rows);
 	}
-	
+
 	/**
 	 * 查询单个实体
+	 *
 	 * @param id
 	 * @return
 	 */
 	@RequestMapping("/findOrder")
-	public Order findOrder(String id){
-		return orderService.findOrder(id);		
+	public Order findOrder(String id) {
+		return orderService.findOrder(id);
 	}
+
+
+	@RequestMapping("/evaluation")
+	public Result evaluation(int star, String sellerId) {
+
+		try {
+			orderService.evaluation(star, sellerId);
+			return new Result(true, "评价成功");
+		} catch (Exception e) {
+			return new Result(false, "评价失败");
+		}
+
+	}
+
 }
