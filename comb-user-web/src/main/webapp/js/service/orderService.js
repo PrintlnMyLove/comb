@@ -28,8 +28,8 @@ app.service('orderService',function($http){
 		return $http.post('../order/ensure.do?id='+id);
 	}
 
-	this.evaluation=function(star,sellerId){
-		return $http.post('../order/evaluation.do?star='+star+'&sellerId='+sellerId);
+	this.evaluation=function(star,sellerId,id){
+		return $http.post('../order/evaluation.do?star='+star+'&sellerId='+sellerId+'&id='+id);
 }
 
 });

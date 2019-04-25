@@ -33,5 +33,5 @@ public interface OrderService {
 	 * 评价数
 	 * @param star
 	 */
-	public void evaluation(int star, String sellerId);
+	public void evaluation(int star, String sellerId,String id);
 }

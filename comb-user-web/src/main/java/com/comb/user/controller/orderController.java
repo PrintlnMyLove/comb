@@ -72,10 +72,10 @@ public class orderController {
 
 
 	@RequestMapping("/evaluation")
-	public Result evaluation(int star, String sellerId) {
+	public Result evaluation(int star, String sellerId,String id) {
 
 		try {
-			orderService.evaluation(star, sellerId);
+			orderService.evaluation(star, sellerId,id);
 			return new Result(true, "评价成功");
 		} catch (Exception e) {
 			return new Result(false, "评价失败");

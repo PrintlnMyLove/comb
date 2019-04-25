@@ -75,7 +75,7 @@
 							-->  
 								<h4>我的订单</h4>
 									<!--order1-->
-									<div ng-repeat="order in orderList">
+									<div ng-repeat="order in orderList" ng-if="order.order.status != 6">
 			                                <div class="choose-title">
 			                                    <label data-toggle="checkbox" class="checkbox-pretty ">
 			                                           <input type="checkbox" checked="checked"><span>订单编号：{{order.order.orderId}}  店铺：{{order.nickName}} <a>店铺详情</a></span>
@@ -128,10 +128,10 @@
 			                                                </ul>
 			                                            </td>
 			                                       </tr>
-			                                       <tr ng-if="order.order.status == 5 || order.order.status == 6 || order.order.status == 7">
+			                                       <tr ng-if="order.order.status == 5">
 		                                 				<td width="100%" class="center">
 			                                                <ul class="unstyled">
-																<li><a href="#" class="sui-btn btn-info btn_evaluation"  ng-click="getTeam(orderList.order.sellerId)">立即评价</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;取消订单</li>
+																<li><a href="#" class="sui-btn btn-info btn_evaluation"  ng-click="getTeam(order.order.sellerId)">立即评价</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;取消订单</li>
 																<div id="container">
 																	<div id="evaluate">
 																		<p>您好，请对我们的服务以及购买的商品进行评价</p>
@@ -147,7 +147,7 @@
 																		<a href="javascript:click(5)" ng-click="check(5)"><img src="js/img/star.png" id="star5" onMouseOver="over(5)" onMouseOut="out(5)"/></a>
 																		<span id="message"></span>
 																		<br><br>
-																		<a href="#" class="close" ng-click="evaluation()">[关闭]</a>
+																		<a href="#" class="close" ng-click="evaluation(order.order.orderId) ">[关闭]</a>
 																		<br>
 																	</div>
 																</div>

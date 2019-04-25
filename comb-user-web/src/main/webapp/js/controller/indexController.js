@@ -31,7 +31,7 @@ app.controller('indexController',function($scope,loginService,orderService) {
 						if (response.success) {
 							//重新查询 
 							alert(response.message);
-							$scope.reloadList();//重新加载
+							window.location.reload();
 						} else {
 							alert(response.message);
 						}
@@ -52,11 +52,11 @@ app.controller('indexController',function($scope,loginService,orderService) {
 		sellerId = param;
 	}
 
-	$scope.evaluation = function () {
-		orderService.evaluation(star, sellerId).success(
+	$scope.evaluation = function (id) {
+		orderService.evaluation(star, sellerId,id).success(
 				function (response) {
 					if (response.success) {
-						$scope.reloadList();//重新加载
+						window.location.reload();
 					}
 				}
 		);

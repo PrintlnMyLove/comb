@@ -87,7 +87,6 @@ public class OrderServiceImpl implements OrderService{
 		order.setStatus("5");
 		order.setEndTime(new Date());
 		orderMapper.updateByPrimaryKey(order);
-		TbOrder order2 = new TbOrder();
 		
 	}
 
@@ -108,12 +107,17 @@ public class OrderServiceImpl implements OrderService{
 
 
 	@Override
-	public void evaluation(int star, String sellerId) {
+	public void evaluation(int star, String sellerId,String id) {
 		TbTeamCheck tbTeamCheck = teamCheckMapper.selectByPrimaryKey(sellerId);
 		Long totalStar = tbTeamCheck.getStar();
 		totalStar += star;
 		tbTeamCheck.setStar(totalStar);
 		teamCheckMapper.updateByPrimaryKey(tbTeamCheck);
+		
+		TbOrder order = orderMapper.selectByPrimaryKey(id);
+		order.setStatus("6");
+		order.setEndTime(new Date());
+		orderMapper.updateByPrimaryKey(order);
 	}
 
 
