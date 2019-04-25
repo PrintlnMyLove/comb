@@ -11,8 +11,10 @@
     <dubbo:protocol name="dubbo" port="20889"></dubbo:protocol> 
     
 	<dubbo:application name="comb-seckill-service"/>  
-   <dubbo:registry protocol="zookeeper"  address="192.168.25.128:2181"/>
-    <dubbo:annotation package="com.comb.seckill.service.impl" />  
+	<dubbo:annotation package="com.comb.TeamRankService.impl" /> 
+	<dubbo:annotation package="com.comb.seckill.service.impl" />  
+   <dubbo:registry protocol="zookeeper"  address="47.95.211.233:2181,39.97.67.167:2181,39.97.73.18:2181" timeout="100000"/>
+    
    
     <bean id="idWorker" class="util.IdWorker">
     	<constructor-arg index="0" value="1"></constructor-arg>

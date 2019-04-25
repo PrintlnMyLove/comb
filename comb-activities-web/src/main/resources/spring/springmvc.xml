@@ -28,8 +28,11 @@
 	
 
 	<!-- 引用dubbo 服务 -->
-	<dubbo:application name="comb-seckill-web" />
-	<dubbo:registry protocol="zookeeper"  address="192.168.25.128:2181"/>
-	<dubbo:annotation package="com.comb.seckill.controller" />  	
+	<dubbo:annotation package="com.comb.seckill.controller" /> 
+	<dubbo:annotation package="com.comb.activities.controller" /> 
+	<dubbo:application name="comb-activities-web" />
+	
+	
+	 	
 
 </beans>

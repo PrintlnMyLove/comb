@@ -110,11 +110,6 @@
 
 		<dependency>
 			<groupId>com.comb</groupId>
-			<artifactId>comb-seckill-interface</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>com.comb</groupId>
 			<artifactId>comb-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
@@ -123,6 +118,16 @@
 			<artifactId>comb-parent</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.comb</groupId>
+			<artifactId>comb-activities-interface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.comb</groupId>
+			<artifactId>comb-dao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
   </dependencies>
   
