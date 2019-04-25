@@ -8,7 +8,7 @@
 	<http pattern="/img/**" security="none"></http>
 	<http pattern="/js/**" security="none"></http>
 	<http pattern="/plugins/**" security="none"></http>
-	
+	<http pattern="/rank/**" security="none"></http>
 	<http pattern="/seckill-*.html" security="none"></http>
     <http pattern="/seckillGoods/*.do" security="none"></http>	
 	<!--   entry-point-ref  入口点引用 -->

@@ -35,6 +35,7 @@ public class TeamUserServiceImpl implements TeamUserService {
 	@Autowired
 	private TbTeamCheckMapper teamCheckMapper;
 	
+	
 	/**
 	 * 查询全部
 	 */
@@ -60,7 +61,7 @@ public class TeamUserServiceImpl implements TeamUserService {
 	public void add(TbTeamUser teamUser) {
 		teamUser.setStatus("0");	//默认状态
 		teamUser.setCreateTime(new Date());	//申请日期
-		teamUserMapper.insert(teamUser);		
+		teamUserMapper.insert(teamUser);	
 	}
 
 	
@@ -158,12 +159,22 @@ public class TeamUserServiceImpl implements TeamUserService {
 			TbTeamUser teamUser = teamUserMapper.selectByPrimaryKey(teamId);
 			teamUser.setStatus(status);
 			teamUserMapper.updateByPrimaryKey(teamUser);
-			
+			if(status.equals("1")) {
+				TbTeamCheck tbTeamCheck = new TbTeamCheck();
+				tbTeamCheck.setTeamId(teamUser.getSellerId());
+				tbTeamCheck.setMonthOrder((long) 0);
+				tbTeamCheck.setPv((long) 0);
+				tbTeamCheck.setStar((long) 0);
+				tbTeamCheck.setYearOrder((long) 0);
+				teamCheckMapper.insert(tbTeamCheck);
+			}
+			if(status.equals("3")) {
+				teamCheckMapper.deleteByPrimaryKey(teamUser.getSellerId());
+			}
 		}
 
 		@Override
 		public boolean isPassword(String id, String oldPassword) {
-			
 			TbTeamUser teamUser = teamUserMapper.selectByPrimaryKey(id);
 			if(teamUser.getPassword().equals(oldPassword)) {
 				return true;
