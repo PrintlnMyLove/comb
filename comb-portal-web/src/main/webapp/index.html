@@ -146,17 +146,17 @@
 					<div class="item bo" ng-repeat="item1 in list[0] track by item1.id" ng-if="$index<=14">
 							<h3><a href="http://localhost:8084/search.html#?keywords={{item1.name}}">{{item1.name}}</a></h3>
 							
-					<!--  		<div class="item-list clearfix" ng-init="findItemCatList(item1.id)">
+					  		<div class="item-list clearfix"  ng-init="findItemCatList(item1.id)">
 								<div class="subitem">
-									<dl class="fore{{$index+1}}" ng-repeat="item2 in list[item1.id] track by item2.id">
-										<dt><a href="http://localhost:8084/search.html#?keywords={{item2.name}}">{{item2.name}}</a></dt>
+									<dl class="fore{{$index+1}}"  ng-repeat="item2 in list[item1.id] track by item2.id">
+										<dt><a  class="test" href="http://localhost:8084/search.html#?keywords={{item2.name}}">{{item2.name}}</a></dt>
 										<dd ng-init="findItemCatList(item2.id)">
 											<em ng-repeat="item3 in list[item2.id] track by item3.id"><a href="http://localhost:8084/search.html#?keywords={{item3.name}}">{{item3.name}}</a></em>
 										</dd>
 									</dl>
 								</div>
 							</div>
-					-->		
+						
 					</div>	
 					
 					

@@ -4,7 +4,21 @@
 
 /*商品分类*/
 $(function() {
-	$('.all-sort-list2 > .item').hover(function() {
+	$(document).on('mouseover', '.all-sort-list2 > .item', function() {
+		$(this).addClass('hover');
+		$(this).children('.item-list').css('display', 'block');
+	});
+	$(document).on('mouseout', '.all-sort-list2 > .item', function() {
+		$(this).removeClass('hover');
+		$(this).children('.item-list').css('display', 'none');
+	});
+	$(document).on('click', '.item > .item-list > .close' , function() {
+		$(this).parent().parent().removeClass('hover');
+		$(this).parent().hide();
+	});
+		
+
+	/*$('.all-sort-list2 > .item').hover(function() {
 		//父类分类列表容器的高度
 
 		$(this).addClass('hover');
@@ -17,7 +31,7 @@ $(function() {
 	$('.item > .item-list > .close').click(function() {
 		$(this).parent().parent().removeClass('hover');
 		$(this).parent().hide();
-	});
+	});*/
 });
 
 /*楼层导航*/
