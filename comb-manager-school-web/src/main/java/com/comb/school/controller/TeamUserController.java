@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.comb.pojo.TbTeamUser;
+import com.comb.pojogroup.TeamUserCheck;
+import com.comb.publish.service.TeamRankService;
 import com.comb.publish.service.TeamUserService;
 
 import entity.PageResult;
@@ -23,6 +25,9 @@ public class TeamUserController {
 
 	@Reference
 	private TeamUserService teamUserService;
+	
+	@Reference
+	private TeamRankService teamRankService;
 	
 	/**
 	 * 返回全部列表
@@ -129,4 +134,30 @@ public class TeamUserController {
 		}
 	}
 	
+	/**
+	 * 按转化率来排名
+	 * @return
+	 */
+	@RequestMapping("/findPv")
+	public List<TeamUserCheck> findPv(){
+		return teamRankService.rankByPv();
+	}
+	
+	/**
+	 * 按好评率来排名
+	 * @return
+	 */
+	@RequestMapping("/findStarRate")
+	public List<TeamUserCheck> findStarRate(){
+		return teamRankService.rankByStarRate();
+	}
+	
+	/**
+	 * 综合排名
+	 * @return
+	 */
+	@RequestMapping("/findGroup")
+	public List<TeamUserCheck> findGroup(){
+		return teamRankService.rankBygroup();
+	}
 }

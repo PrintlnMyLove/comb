@@ -26,7 +26,6 @@ public class itemDeleteListener implements MessageListener{
 			itemSearchService.deleteByGoodsIds(Arrays.asList(goodsIds));
 			System.out.println("成功删除索引库中的记录");			
 		} catch (JMSException e) {
-			
 			e.printStackTrace();
 		}
 		

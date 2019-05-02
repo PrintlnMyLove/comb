@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
 	<title>蜂巢创业园，优质！优质！</title>
-	 <link rel="icon" href="assets/img/favicon.ico">
+	 <link rel="icon" href="icon.ico">
 
     <link rel="stylesheet" type="text/css" href="css/webbase.css" />
     <link rel="stylesheet" type="text/css" href="css/pages-JD-index.css" />
@@ -38,23 +38,23 @@
 
 					</ul>
 					<ul class="fr">
-						<li class="f-item"><a href="http://localhost:8086" target="_blank">我的订单</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8086" target="_blank">我的订单</a></li>
 						<li class="f-item space"></li>
-						<li class="f-item"><a href="http://localhost:8086" target="_blank">我的蜂巢</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8086" target="_blank">我的蜂巢</a></li>
 						<li class="f-item space"></li>
-						<li class="f-item"><a href="http://localhost:8086" target="_blank">蜂巢会员</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8086" target="_blank">蜂巢会员</a></li>
 						<li class="f-item space"></li>
 						<li class="f-item"><a href="#" target="_blank">客服</a></li>	
 						<li class="f-item space"></li>
-						<li class="f-item"><a href="http://localhost:8082/register.html" target="_blank">团队入驻</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8082/register.html" target="_blank">团队入驻</a></li>
 						<li class="f-item space"></li>
 						<li class="f-item" id="service">
 							<span>后台服务</span>
 							<ul class="service">
-								<li><a href="http://localhost:8081/login.html" target="_blank">校级管理后台</a></li>
-								<li><a href="http://localhost:8082/teamlogin.html" target="_blank">创业团队后台</a></li>
-								<li><a href="http://localhost:8082/register.html" target="_blank">反馈平台</a></li>
-								<li><a href="http://localhost:8082/teamlogin.html">客服</a></li>
+								<li><a href="http://39.97.73.18:8082/login.html" target="_blank">校级管理后台</a></li>
+								<li><a href="http://39.97.73.18:8083/teamlogin.html" target="_blank">创业团队后台</a></li>
+								<li><a href="http://39.97.73.18:8082/register.html" target="_blank">反馈平台</a></li>
+								<li><a href="http://39.97.73.18:8082/teamlogin.html">客服</a></li>
 							</ul>
 						</li>
 						<li class="f-item space"></li>
@@ -83,12 +83,12 @@
 						</div>
 						<div class="hotwords">
 							<ul>
-								<li class="f-item">蜂巢首发</li>
-								<li class="f-item">亿元优惠</li>
-								<li class="f-item">9.9元团购</li>
-								<li class="f-item">每满99减30</li>
-								<li class="f-item">亿元优惠</li>
-								<li class="f-item">9.9元团购</li>
+								<li class="f-item">蜂巢限时</li>
+								<li class="f-item">校园服务</li>
+								<li class="f-item">优惠服务</li>
+								<li class="f-item">新进好玩</li>
+								<li class="f-item">个人摄影</li>
+								<li class="f-item">二手教材</li>
 								<li class="f-item">办公用品</li>
 
 							</ul>
@@ -98,8 +98,8 @@
 						<div class="fr shopcar">
 							<div class="show-shopcar" id="shopcar">
 								<span class="car"></span>
-								<a class="sui-btn btn-default btn-xlarge" href="http://localhost:8087/cart.html" target="_blank">
-									<span>我的购物车</span>
+								<a class="sui-btn btn-default btn-xlarge" href="http://47.95.211.233:8087/cart.html" target="_blank">
+									<span>服务购物车</span>
 									<i class="shopnum">0</i>
 								</a>
 								<div class="clearfix shopcarlist" id="shopcarlist" style="display:none">
@@ -113,7 +113,7 @@
 
 				<div class="yui3-g NavList">
 					<div class="yui3-u Left all-sort">
-						<h4>商品主分类</h4>
+						<h4>创业团队业务主分类</h4>
 					</div>
 					<div class="yui3-u Center navArea">
 						<ul class="nav">
@@ -142,22 +142,23 @@
 				<div class="yui3-u Left all-sort-list">
 					<div class="all-sort-list2">
 					
-					<div class="item bo" ng-repeat="item1 in list[0] track by $index" ng-if="$index<=14">
-							<h3><a href="http://localhost:8084/search.html#?keywords={{item1.name}}">{{item1.name}}</a></h3>
+					<div class="item bo" ng-repeat="item1 in list[0] track by item1.id" ng-if="$index<=14">
+							<h3><a href="http://47.95.211.233:8084/search.html#?keywords={{item1.name}}">{{item1.name}}</a></h3>
 							
-				<!--	  		<div class="item-list clearfix" ng-init="findItemCatList(item1.id)">
+					  		<div class="item-list clearfix" ng-init="findItemCatList(item1.id)">
 								<div class="subitem">
-									<dl class="fore{{$index+1}}" ng-repeat="item2 in list[item1.id] track by $index">
-										<dt><a href="http://localhost:8084/search.html#?keywords={{item2.name}}">{{item2.name}}</a></dt>
+									<dl class="fore{{$index+1}}" ng-repeat="item2 in list[item1.id] track by item2.id">
+										<dt><a href="http://47.95.211.233:8084/search.html#?keywords={{item2.name}}">{{item2.name}}</a></dt>
 										<dd ng-init="findItemCatList(item2.id)">
-											<em ng-repeat="item3 in list[item2.id] track by $index"><a href="http://localhost:8084/search.html#?keywords={{item3.name}}">{{item3.name}}</a></em>
+											<em ng-repeat="item3 in list[item2.id] track by item3.id"><a href="http://47.95.211.233:8084/search.html#?keywords={{item3.name}}">{{item3.name}}</a></em>
 										</dd>
 									</dl>
 								</div>
 							</div>
-						  -->
-						</div>	
 							
+					</div>	
+					
+					
 					</div>
 				</div>
 				
@@ -175,7 +176,7 @@
 					      </a>
 					    </div> -->
 					    <div class="{{$index==0?'active':''}} item" ng-repeat="item in contentList[1]">
-					    <a href="http://localhost:8084/search.html#?keywords={{item.url}}">
+					    <a href="http://47.95.211.233:8084/search.html#?keywords={{item.url}}">
 					    	<img src="{{item.pic}}"  width="730" height="454"/>
 					      </a>
 					    </div>
@@ -189,93 +190,25 @@
 						<div class="clearix"></div>
 						<ul class="news-list unstyled">
 							<li>
-								<span class="bold">[特惠]</span>备战开学季 全民半价购数码
+								<span class="bold">[公告]</span>评论功能即将开启，AI助力发威
 							</li>
 							<li>
-								<span class="bold">[公告]</span>备战开学季 全民半价购数码
+								<span class="bold">[公告]</span>数据分析即将发布 可视化一目了然
 							</li>
 							<li>
-								<span class="bold">[特惠]</span>备战开学季 全民半价购数码
+								<span class="bold">[特惠]</span>校园摄影团队 打造不一样的你
 							</li>
 							<li>
-								<span class="bold">[公告]</span>备战开学季 全民半价购数码
+								<span class="bold">[公告]</span>备战开学季 二手好书好教材
 							</li>
 							<li>
-								<span class="bold">[特惠]</span>备战开学季 全民半价购数码
+								<span class="bold">[团队]</span>创业团队入驻细则
 							</li>
 						</ul>
 					</div>
-					<ul class="yui3-g Lifeservice">
-						<li class="yui3-u-1-4 life-item tab-item">
-							<i class="list-item list-item-1"></i>
-							<span class="service-intro">话费</span>
-						</li>
-						<li class="yui3-u-1-4 life-item tab-item">
-							<i class="list-item list-item-2"></i>
-							<span class="service-intro">机票</span>
-						</li>
-						<li class="yui3-u-1-4 life-item tab-item">
-							<i class="list-item list-item-3"></i>
-							<span class="service-intro">电影票</span>
-						</li>
-						<li class="yui3-u-1-4 life-item tab-item">
-							<i class="list-item list-item-4"></i>
-							<span class="service-intro">游戏</span>
-						</li>
-						<li class="yui3-u-1-4 life-item notab-item">
-							<i class="list-item list-item-5"></i>
-							<span class="service-intro">彩票</span>
-						</li>
-						<li class="yui3-u-1-4 life-item notab-item">
-							<i class="list-item list-item-6"></i>
-							<span class="service-intro">加油站</span>
-						</li>
-						<li class="yui3-u-1-4 life-item notab-item">
-							<i class="list-item list-item-7"></i>
-							<span class="service-intro">酒店</span>
-						</li>
-						<li class="yui3-u-1-4 life-item notab-item">
-							<i class="list-item list-item-8"></i>
-							<span class="service-intro">火车票</span>
-						</li>
-						<li class="yui3-u-1-4 life-item  notab-item">
-							<i class="list-item list-item-9"></i>
-							<span class="service-intro">众筹</span>
-						</li>
-						<li class="yui3-u-1-4 life-item notab-item">
-							<i class="list-item list-item-10"></i>
-							<span class="service-intro">理财</span>
-						</li>
-						<li class="yui3-u-1-4 life-item notab-item">
-							<i class="list-item list-item-11"></i>
-							<span class="service-intro">礼品卡</span>
-						</li>
-						<li class="yui3-u-1-4 life-item notab-item">
-							<i class="list-item list-item-12"></i>
-							<span class="service-intro">白条</span>
-						</li>
-					</ul>
-					<div class="life-item-content">
-						<div class="life-detail">
-							<i class="close">关闭</i>
-							<p>话费充值</p>
-							<form action="" class="sui-form form-horizontal">
-								号码：<input type="text" id="inputphoneNumber" placeholder="输入你的号码" />
-							</form>
-							<button class="sui-btn btn-danger">快速充值</button>
-						</div>
-						<div class="life-detail">
-							<i class="close">关闭</i> 机票
-						</div>
-						<div class="life-detail">
-							<i class="close">关闭</i> 电影票
-						</div>
-						<div class="life-detail">
-							<i class="close">关闭</i> 游戏
-						</div>
-					</div>
+					
 					<div class="ads">
-						<img src="img/ad1.png" />
+						
 					</div>
 				</div>
 			</div>
@@ -288,12 +221,12 @@
 				<li class="yui3-u-1-6  clock">
 					<div class="time" ng-init="findByCategoryId(2)">
 						<img src="img/clock.png" />
-						<h3>今日推荐</h3>
+						<h3>今日团队推荐</h3>
 					</div>
 				</li>
 				
 					<li class="yui3-u-5-24" ng-repeat="item2 in contentList[2] track by $index" >
-						<a ng-if="$index<4" href="http://localhost:8084/search.html#?keywords={{item2.url}}" target="_blank"><img src="{{item2.pic}}" width="248px" height="163px"/></a>
+						<a ng-if="$index<4" href="http://47.95.211.233:8084/search.html#?keywords={{item2.url}}" target="_blank"><img src="{{item2.pic}}" width="248px" height="163px"/></a>
 					</li>
 			</ul>
 		</div>
@@ -311,7 +244,7 @@
 					<li class="yui3-u-1-6" ng-repeat="item4 in contentList[4] track by $index">
 						<dl class="picDl huozhe">
 							<dd>
-								<a href="http://localhost:8084/search.html#?keywords={{item4.url}}" class="pic"><img src="{{item4.pic}}" alt="{{item4.title}}" width="250px" height="142px"/></a>
+								<a href="http://47.95.211.233:8084/search.html#?keywords={{item4.url}}" class="pic"><img src="{{item4.pic}}" alt="{{item4.title}}" width="250px" height="142px"/></a>
 								<div class="like-text">
 									<p>{{item4.title}}</p>
 									<h3>{{item4.title}}</h3>
@@ -324,298 +257,13 @@
 		</div>
 	</div>
 	<!--有趣-->
-	<div class="fun" ng-init="findByCategoryId(5)">
-		<div class="py-container">
-			<div class="title">
-				<h3 class="fl">蜂巢.有趣区</h3>
-			</div>
-			<div class="clearfix yui3-g Interest" ng-repeat="item5 in contentList[5] track by $index">
-				<span class="x-line"></span>
-				<div class="yui3-u row-405 Interest-conver" ng-if="$index==0">
-					<a href="http://localhost:8084/search.html#?keywords={{item5.url}}" class="pic"><img src="{{item5.pic}}" alt="{{item5.title}}" width="404px" height="405px"/></a>
-				</div>
-				<div class="yui3-u row-225 Interest-conver-split" ng-if="$index=1">
-					<h5>好东西</h5>
-					<a href="http://localhost:8084/search.html#?keywords={{item5.url}}" class="pic"><img src="{{item5.pic}}" alt="{{item5.title}}" width="225px" height="205px"/></a>
-					<a href="http://localhost:8084/search.html#?keywords={{item5.url}}" class="pic"><img src="{{item5.pic}}" alt="{{item5.title}}" width="225px" height="205px"/></a>
-				</div>
-				<div class="yui3-u row-405 Interest-conver-split blockgary" ng-if="$index>">
-					<h5>品牌街</h5>
-					<div class="split-bt">
-						<img src="img/interest04.png" />
-					</div>
-					<div class="x-img fl">
-						<img src="img/interest05.png" />
-					</div>
-					<div class="x-img fr">
-						<img src="img/interest06.png" />
-					</div>
-				</div>
-				<div class="yui3-u row-165 brandArea">
-					<span class="brand-yline"></span>
-					<ul class="yui3-g brand-list">
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand01.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand02.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand03.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand04.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand05.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand06.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand07.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand08.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand09.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand10.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand11.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand12.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand13.png" /></li>
-						<li class="yui3-u-1-2 brand-pit"><img src="img/brand03.png" /></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--楼层-->
-	<div id="floor-1" class="floor">
-		<div class="py-container">
-			<div class="title floors">
-				<h3 class="fl">家用电器</h3>
-				<div class="fr">
-					<ul class="sui-nav nav-tabs">
-						<li class="active">
-							<a href="#tab1" data-toggle="tab">热门</a>
-						</li>
-						<li>
-							<a href="#tab2" data-toggle="tab">大家电</a>
-						</li>
-						<li>
-							<a href="#tab3" data-toggle="tab">生活电器</a>
-						</li>
-						<li>
-							<a href="#tab4" data-toggle="tab">厨房电器</a>
-						</li>
-						<li>
-							<a href="#tab5" data-toggle="tab">应季电器</a>
-						</li>
-						<li>
-							<a href="#tab6" data-toggle="tab">空气/净水</a>
-						</li>
-						<li>
-							<a href="#tab7" data-toggle="tab">高端电器</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="clearfix  tab-content floor-content">
-				<div id="tab1" class="tab-pane active">
-					<div class="yui3-g Floor-1">
-						<div class="yui3-u Left blockgary">
-							<ul class="jd-list">
-								<li>节能补贴</li>
-								<li>4K电视</li>
-								<li>空气净化器</li>
-								<li>IH电饭煲</li>
-								<li>滚筒洗衣机</li>
-								<li>电热水器</li>
-							</ul>
-							<img src="img/floor-1-1.png" />
-						</div>
-						<div class="yui3-u row-330 floorBanner">
-							<div id="floorCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
-								<ol class="carousel-indicators">
-									<li data-target="#floorCarousel" data-slide-to="0" class="active"></li>
-									<li data-target="#floorCarousel" data-slide-to="1"></li>
-									<li data-target="#floorCarousel" data-slide-to="2"></li>
-								</ol>
-								<div class="carousel-inner">
-									<div class="active item">
-										<img src="img/floor-1-b01.png">
-									</div>
-									<div class="item">
-										<img src="img/floor-1-b02.png">
-									</div>
-									<div class="item">
-										<img src="img/floor-1-b03.png">
-									</div>
-								</div>
-								<a href="#floorCarousel" data-slide="prev" class="carousel-control left">‹</a>
-								<a href="#floorCarousel" data-slide="next" class="carousel-control right">›</a>
-							</div>
-						</div>
-						<div class="yui3-u row-220 split">
-							<span class="floor-x-line"></span>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-2.png" />
-							</div>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-3.png" />
-							</div>
-						</div>
-						<div class="yui3-u row-218 split">
-							<img src="img/floor-1-4.png" />
-						</div>
-						<div class="yui3-u row-220 split">
-							<span class="floor-x-line"></span>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-5.png" />
-							</div>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-6.png" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="tab2" class="tab-pane">
-					<p>第二个</p>
-				</div>
-				<div id="tab3" class="tab-pane">
-					<p>第三个</p>
-				</div>
-				<div id="tab4" class="tab-pane">
-					<p>第4个</p>
-				</div>
-				<div id="tab5" class="tab-pane">
-					<p>第5个</p>
-				</div>
-				<div id="tab6" class="tab-pane">
-					<p>第6个</p>
-				</div>
-				<div id="tab7" class="tab-pane">
-					<p>第7个</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="floor-2" class="floor">
-		<div class="py-container">
-			<div class="title floors">
-				<h3 class="fl">手机通讯</h3>
-				<div class="fr">
-					<ul class="sui-nav nav-tabs">
-						<li class="active">
-							<a href="#tab8" data-toggle="tab">热门</a>
-						</li>
-						<li>
-							<a href="#tab9" data-toggle="tab">品质优选</a>
-						</li>
-						<li>
-							<a href="#tab10" data-toggle="tab">新机尝鲜</a>
-						</li>
-						<li>
-							<a href="#tab11" data-toggle="tab">高性价比</a>
-						</li>
-						<li>
-							<a href="#tab12" data-toggle="tab">合约机</a>
-						</li>
-						<li>
-							<a href="#tab13" data-toggle="tab">手机卡</a>
-						</li>
-						<li>
-							<a href="#tab14" data-toggle="tab">手机配件</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="clearfix  tab-content floor-content">
-				<div id="tab8" class="tab-pane active">
-					<div class="yui3-g Floor-1">
-						<div class="yui3-u Left blockgary">
-							<ul class="jd-list">
-								<li>节能补贴</li>
-								<li>4K电视</li>
-								<li>空气净化器</li>
-								<li>IH电饭煲</li>
-								<li>滚筒洗衣机</li>
-								<li>电热水器</li>
-							</ul>
-							<img src="img/floor-1-1.png" />
-						</div>
-						<div class="yui3-u row-330 floorBanner">
-							<div id="floorCarousell" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
-								<ol class="carousel-indicators">
-									<li data-target="#floorCarousell" data-slide-to="0" class="active"></li>
-									<li data-target="#floorCarousell" data-slide-to="1"></li>
-									<li data-target="#floorCarousell" data-slide-to="2"></li>
-								</ol>
-								<div class="carousel-inner">
-									<div class="active item">
-										<img src="img/floor-1-b01.png">
-									</div>
-									<div class="item">
-										<img src="img/floor-1-b02.png">
-									</div>
-									<div class="item">
-										<img src="img/floor-1-b03.png">
-									</div>
-								</div>
-								<a href="#floorCarousell" data-slide="prev" class="carousel-control left">‹</a>
-								<a href="#floorCarousell" data-slide="next" class="carousel-control right">›</a>
-							</div>
-						</div>
-						<div class="yui3-u row-220 split">
-							<span class="floor-x-line"></span>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-2.png" />
-							</div>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-3.png" />
-							</div>
-						</div>
-						<div class="yui3-u row-218 split">
-							<img src="img/floor-1-4.png" />
-						</div>
-						<div class="yui3-u row-220 split">
-							<span class="floor-x-line"></span>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-5.png" />
-							</div>
-							<div class="floor-conver-pit">
-								<img src="img/floor-1-6.png" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="tab2" class="tab-pane">
-					<p>第二个</p>
-				</div>
-				<div id="tab9" class="tab-pane">
-					<p>第三个</p>
-				</div>
-				<div id="tab10" class="tab-pane">
-					<p>第4个</p>
-				</div>
-				<div id="tab11" class="tab-pane">
-					<p>第5个</p>
-				</div>
-				<div id="tab12" class="tab-pane">
-					<p>第6个</p>
-				</div>
-				<div id="tab13" class="tab-pane">
-					<p>第7个</p>
-				</div>
-				<div id="tab14" class="tab-pane">
-					<p>第8个</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--商标-->
-	<div class="brand">
-		<div class="py-container">
-			<ul class="Brand-list blockgary">
-				<li class="Brand-item">
-					<img src="img/brand_21.png" />
-				</li>
-				<li class="Brand-item"><img src="img/brand_03.png" /></li>
-				<li class="Brand-item"><img src="img/brand_05.png" /></li>
-				<li class="Brand-item"><img src="img/brand_07.png" /></li>
-				<li class="Brand-item"><img src="img/brand_09.png" /></li>
-				<li class="Brand-item"><img src="img/brand_11.png" /></li>
-				<li class="Brand-item"><img src="img/brand_13.png" /></li>
-				<li class="Brand-item"><img src="img/brand_15.png" /></li>
-				<li class="Brand-item"><img src="img/brand_17.png" /></li>
-				<li class="Brand-item"><img src="img/brand_19.png" /></li>
-			</ul>
-		</div>
-	</div>
+	
+	<!-- 详情修改见备份html -->
+	
+	
+	
+	
+	
 	<!-- 底部栏位 -->
 	<!--页面底部-->
 <div class="clearfix footer">
@@ -628,7 +276,7 @@
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
 							<h4>正品保障</h4>
-							<p>正品保障，提供发票</p>
+							<p>正品保障，蜂巢保障</p>
 						</div>
 
 					</li>
@@ -636,8 +284,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>正品保障</h4>
-							<p>正品保障，提供发票</p>
+							<h4>效率保障</h4>
+							<p>效率保障，蜂巢加速</p>
 						</div>
 
 					</li>
@@ -645,8 +293,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>正品保障</h4>
-							<p>正品保障，提供发票</p>
+							<h4>权益保障</h4>
+							<p>权益保障，蜂巢保护</p>
 						</div>
 
 					</li>
@@ -654,8 +302,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>正品保障</h4>
-							<p>正品保障，提供发票</p>
+							<h4>质量保障</h4>
+							<p>质量保障，蜂巢优质</p>
 						</div>
 
 					</li>
@@ -663,8 +311,8 @@
 
 						<i class="serivce-item fl"></i>
 						<div class="service-text">
-							<h4>正品保障</h4>
-							<p>正品保障，提供发票</p>
+							<h4>服务保障</h4>
+							<p>服务保障，蜂巢服务</p>
 						</div>
 
 					</li>
@@ -673,41 +321,30 @@
 			<div class="clearfix Mod-list">
 				<div class="yui3-g">
 					<div class="yui3-u-1-6">
-						<h4>购物指南</h4>
+						<h4>服务指南</h4>
 						<ul class="unstyled">
-							<li>购物流程</li>
-							<li>会员介绍</li>
-							<li>生活旅行/团购</li>
 							<li>常见问题</li>
-							<li>购物指南</li>
 						</ul>
 
 					</div>
 					<div class="yui3-u-1-6">
 						<h4>配送方式</h4>
 						<ul class="unstyled">
-							<li>上门自提</li>
-							<li>211限时达</li>
-							<li>配送服务查询</li>
-							<li>配送费收取标准</li>
-							<li>海外配送</li>
+							<li>蜂巢物流中心</li>
+							<li>团队配送</li>
 						</ul>
 					</div>
 					<div class="yui3-u-1-6">
 						<h4>支付方式</h4>
 						<ul class="unstyled">
+							<li>线下面付</li>
 							<li>货到付款</li>
-							<li>在线支付</li>
-							<li>分期付款</li>
-							<li>邮局汇款</li>
-							<li>公司转账</li>
 						</ul>
 					</div>
 					<div class="yui3-u-1-6">
 						<h4>售后服务</h4>
 						<ul class="unstyled">
 							<li>售后政策</li>
-							<li>价格保护</li>
 							<li>退款说明</li>
 							<li>返修/退换货</li>
 							<li>取消订单</li>
@@ -716,15 +353,12 @@
 					<div class="yui3-u-1-6">
 						<h4>特色服务</h4>
 						<ul class="unstyled">
-							<li>夺宝岛</li>
-							<li>DIY装机</li>
-							<li>延保服务</li>
-							<li>蜂巢E卡</li>
-							<li>蜂巢通信</li>
+							<li>团队入驻</li>
+							<li>服务提供</li>
 						</ul>
 					</div>
 					<div class="yui3-u-1-6">
-						<h4>帮助中心</h4>
+						<h4 id="agent">客服中心</h4>
 						<img src="img/wx_cz.jpg">
 					</div>
 				</div>
@@ -790,7 +424,7 @@
 						<div class="tbar-panel-content J-panel-content">
 							<div id="J-cart-tips" class="tbar-tipbox hide">
 								<div class="tip-inner">
-									<span class="tip-text">还没有登录，登录后商品将被保存</span>
+									<span class="tip-text">还没有登录，登录后服务将被保存</span>
 									<a href="#none" class="tip-btn J-login">登录</a>
 								</div>
 							</div>
@@ -848,7 +482,7 @@
 										<a href="#" target="_blank" class="price">￥498.00</a>
 									</li>-->
 								</ul>
-								<a href="#" class="history-bottom-more" target="_blank">查看更多足迹商品 &gt;&gt;</a>
+								<a href="#" class="history-bottom-more" target="_blank">查看更多足迹 &gt;&gt;</a>
 							</div>
 						</div>
 					</div>
@@ -933,6 +567,9 @@ $(function(){
 <script type="text/javascript" src="js/widget/cartPanelView.js"></script>
 <script type="text/javascript" src="js/widget/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="js/widget/nav.js"></script>
+
+
+
 </body>
 
 
