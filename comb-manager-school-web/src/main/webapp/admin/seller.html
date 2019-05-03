@@ -157,8 +157,8 @@
 			      		<td>{{entity.linkmanName}}</td>
 			      	</tr>
 			      	<tr>
-			      		<td>联系人QQ</td>
-			      		<td>{{entity.linkmanQq}}</td>
+			      		<td>联系人学号</td>
+			      		<td>{{entity.leaderId}}</td>
 			      	</tr>
 			      	<tr>
 			      		<td>联系人手机</td>
@@ -174,16 +174,16 @@
 					<br>
 					<table class="table table-bordered table-striped" >
 				      	<tr>
-				      		<td>负责人身份证号</td>
-				      		<td>330106000109206</td>
-				      	</tr>
-				      	<tr>
-				      		<td>学号</td>
-				      		<td>0292039393011</td>
-				      	</tr>
-				      	<tr>
 				      		<td>营业执照</td>
-				      		<td>22320320302421</td>
+				      		<td></td>
+				      	</tr>
+				      	<tr>
+				      		<td>项目商标</td>
+				      		<td></td>
+				      	</tr>
+				      	<tr>
+				      		<td>其他备注</td>
+				      		<td></td>
 				      	</tr>				      	
 			     	</table>
 			    </div>
@@ -191,12 +191,12 @@
 					<br>
 					<table class="table table-bordered table-striped" >
 				      	<tr>
-				      		<td>法定代表人</td>
-				      		<td>XXX</td>
+				      		<td>团队银行账户</td>
+				      		<td></td>
 				      	</tr>
 				      	<tr>
-				      		<td>法定代表人身份证号</td>
-				      		<td>211030198503223122</td>
+				      		<td>负责人身份证号</td>
+				      		<td></td>
 				      	</tr>					   			      	
 			     	</table>
 			    </div>
@@ -204,27 +204,18 @@
 					<br>
 					<table class="table table-bordered table-striped" >
 				      	<tr>
-				      		<td>开户行名称</td>
-				      		<td>中国建设银行北京市分行</td>
-				      	</tr>
-				      	<tr>
-				      		<td>开户行支行</td>
-				      		<td>海淀支行</td>
-				      	</tr>		
-				      	<tr>
-				      		<td>银行账号</td>
-				      		<td>999000111222</td>
-				      	</tr>			   			      	
+				      		<td>申请文件</td>
+				      		<td></td>
+				      	</tr>		   			      	
 			     	</table>					
 			    </div>
-  			    </div> 			
+  			    </div> 					
            <!-- 选项卡结束 -->          
 			
 			
 		</div>
 		<div class="modal-footer">						
-			<button class="btn btn-success" data-dismiss="modal" aria-hidden="true" ng-click="updateStatus(entity.sellerId,'1')">审核通过</button>
-         	<button class="btn btn-danger"  data-dismiss="modal" aria-hidden="true" ng-click="updateStatus(entity.sellerId,'2')">审核不通过</button>
+         	<button class="btn btn-danger"  data-dismiss="modal" aria-hidden="true" ng-click="updateStatus(entity.sellerId,'2')">暂时关闭</button>
             <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" ng-click="updateStatus(entity.sellerId,'3')">关闭商家</button>
 			<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
 		</div>
