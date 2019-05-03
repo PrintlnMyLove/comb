@@ -51,8 +51,8 @@
 			<div class="fr search">
 				<form class="sui-form form-inline">
 					<div class="input-append">
-						<input type="text" type="text" class="input-error input-xxlarge" placeholder="蜂巢自营" />
-						<button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+						<input type="text" id="autocomplete" ng-model="keywords" type="text" class="input-error input-xxlarge" />
+						<button class="sui-btn btn-xlarge btn-danger" ng-click="search()" type="button">搜索</button>
 					</div>
 				</form>
 			</div>
@@ -128,28 +128,39 @@
 					</div>
 				</div>
 			</div>
+			
+			
+			
 			<div class="clearfix"></div>
+			
+			
+			
 			<div class="deled">
 				<span>已删除商品，您可以重新购买或加关注：</span>
 				<div class="cart-list del">
 					<ul class="goods-list yui3-g">
-						<li class="yui3-u-1-2">
-							<div class="good-item">
-								<div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
-							</div>
-						</li>
-						<li class="yui3-u-1-6"><span class="price">8848.00</span></li>
-						<li class="yui3-u-1-6">
-							<span class="number">1</span>
-						</li>
-						<li class="yui3-u-1-8">
-							<a href="#none">重新购买</a>
-							<a href="#none">移到我的关注</a>
-						</li>
+					<!--  
+								<li class="yui3-u-1-2">
+									<div class="good-item">
+										<div class="item-msg">Apple Macbook Air 13.3英寸笔记本电脑 银色（Corei5）处理器/8GB内存</div>
+									</div>
+								</li>
+								<li class="yui3-u-1-6"><span class="price">8848.00</span></li>
+								<li class="yui3-u-1-6">
+									<span class="number">1</span>
+								</li>
+								<li class="yui3-u-1-8">
+									<a href="#none">重新购买</a>
+									<a href="#none">移到我的关注</a>
+								</li>
+					-->	
 					</ul>
 				</div>
 			</div>
-			<div class="liked">
+			
+			<!--  
+			
+			  <div class="liked">
 				<ul class="sui-nav nav-tabs">
 					<li class="active">
 						<a href="#index" data-toggle="tab">猜你喜欢</a>
@@ -277,6 +288,10 @@
 					</div>
 				</div>
 			</div>
+			
+			-->
+			
+			
 		</div>
 	</div>
 	<!-- 底部栏位 -->

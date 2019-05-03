@@ -26,6 +26,10 @@ app.controller('cartController',function($scope,cartService,addressService){
 	}
 	
 
+	//搜索  （传递参数）
+	$scope.search=function(){
+		location.href="http://localhost:8084/search.html#?keywords="+$scope.keywords;
+	}
 	
 	//获取当前用户的地址列表
 	$scope.findAddressList=function(){
@@ -98,7 +102,9 @@ app.controller('cartController',function($scope,cartService,addressService){
 					//页面跳转
 					if($scope.order.paymentType=='1'){//如果是微信支付，跳转到支付页面
 						location.href="pay.html";
-					}else{//如果货到付款，跳转到提示页面
+					}else if($scope.order.paymentType=='2'){//如果货到付款，跳转到提示页面
+						location.href="paysuccess.html";
+					}else{
 						location.href="paysuccess.html";
 					}
 					

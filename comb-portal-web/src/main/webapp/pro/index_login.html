@@ -38,23 +38,23 @@
 
 					</ul>
 					<ul class="fr">
-						<li class="f-item"><a href="http://localhost:8086" target="_blank">我的订单</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8086" target="_blank">我的订单</a></li>
 						<li class="f-item space"></li>
-						<li class="f-item"><a href="http://localhost:8086" target="_blank">我的蜂巢</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8086" target="_blank">我的蜂巢</a></li>
 						<li class="f-item space"></li>
-						<li class="f-item"><a href="http://localhost:8086" target="_blank">蜂巢会员</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8086" target="_blank">蜂巢会员</a></li>
 						<li class="f-item space"></li>
 						<li class="f-item"><a href="#" target="_blank">客服</a></li>	
 						<li class="f-item space"></li>
-						<li class="f-item"><a href="http://localhost:8082/register.html" target="_blank">团队入驻</a></li>
+						<li class="f-item"><a href="http://47.95.211.233:8082/register.html" target="_blank">团队入驻</a></li>
 						<li class="f-item space"></li>
 						<li class="f-item" id="service">
 							<span>后台服务</span>
 							<ul class="service">
-								<li><a href="http://localhost:8081/login.html" target="_blank">校级管理后台</a></li>
-								<li><a href="http://localhost:8082/teamlogin.html" target="_blank">创业团队后台</a></li>
-								<li><a href="http://localhost:8082/register.html" target="_blank">反馈平台</a></li>
-								<li><a href="http://localhost:8082/teamlogin.html">客服</a></li>
+								<li><a href="http://39.97.73.18:8082/login.html" target="_blank">校级管理后台</a></li>
+								<li><a href="http://39.97.73.18:8083/teamlogin.html" target="_blank">创业团队后台</a></li>
+								<li><a href="http://39.97.73.18:8082/register.html" target="_blank">反馈平台</a></li>
+								<li><a href="http://39.97.73.18:8082/teamlogin.html">客服</a></li>
 							</ul>
 						</li>
 						<li class="f-item space"></li>
@@ -98,7 +98,7 @@
 						<div class="fr shopcar">
 							<div class="show-shopcar" id="shopcar">
 								<span class="car"></span>
-								<a class="sui-btn btn-default btn-xlarge" href="http://localhost:8087/cart.html" target="_blank">
+								<a class="sui-btn btn-default btn-xlarge" href="http://47.95.211.233:8087/cart.html" target="_blank">
 									<span>服务购物车</span>
 									<i class="shopnum">0</i>
 								</a>
@@ -143,14 +143,14 @@
 					<div class="all-sort-list2">
 					
 					<div class="item bo" ng-repeat="item1 in list[0] track by item1.id" ng-if="$index<=14">
-							<h3><a href="http://localhost:8084/search.html#?keywords={{item1.name}}">{{item1.name}}</a></h3>
+							<h3><a href="http://47.95.211.233:8084/search.html#?keywords={{item1.name}}">{{item1.name}}</a></h3>
 							
 					  		<div class="item-list clearfix" ng-init="findItemCatList(item1.id)">
 								<div class="subitem">
 									<dl class="fore{{$index+1}}" ng-repeat="item2 in list[item1.id] track by item2.id">
-										<dt><a href="http://localhost:8084/search.html#?keywords={{item2.name}}">{{item2.name}}</a></dt>
+										<dt><a href="http://47.95.211.233:8084/search.html#?keywords={{item2.name}}">{{item2.name}}</a></dt>
 										<dd ng-init="findItemCatList(item2.id)">
-											<em ng-repeat="item3 in list[item2.id] track by item3.id"><a href="http://localhost:8084/search.html#?keywords={{item3.name}}">{{item3.name}}</a></em>
+											<em ng-repeat="item3 in list[item2.id] track by item3.id"><a href="http://47.95.211.233:8084/search.html#?keywords={{item3.name}}">{{item3.name}}</a></em>
 										</dd>
 									</dl>
 								</div>
@@ -176,7 +176,7 @@
 					      </a>
 					    </div> -->
 					    <div class="{{$index==0?'active':''}} item" ng-repeat="item in contentList[1]">
-					    <a href="http://localhost:8084/search.html#?keywords={{item.url}}">
+					    <a href="http://47.95.211.233:8084/search.html#?keywords={{item.url}}">
 					    	<img src="{{item.pic}}"  width="730" height="454"/>
 					      </a>
 					    </div>
@@ -226,7 +226,7 @@
 				</li>
 				
 					<li class="yui3-u-5-24" ng-repeat="item2 in contentList[2] track by $index" >
-						<a ng-if="$index<4" href="http://localhost:8084/search.html#?keywords={{item2.url}}" target="_blank"><img src="{{item2.pic}}" width="248px" height="163px"/></a>
+						<a ng-if="$index<4" href="http://47.95.211.233:8084/search.html#?keywords={{item2.url}}" target="_blank"><img src="{{item2.pic}}" width="248px" height="163px"/></a>
 					</li>
 			</ul>
 		</div>
@@ -244,7 +244,7 @@
 					<li class="yui3-u-1-6" ng-repeat="item4 in contentList[4] track by $index">
 						<dl class="picDl huozhe">
 							<dd>
-								<a href="http://localhost:8084/search.html#?keywords={{item4.url}}" class="pic"><img src="{{item4.pic}}" alt="{{item4.title}}" width="250px" height="142px"/></a>
+								<a href="http://47.95.211.233:8084/search.html#?keywords={{item4.url}}" class="pic"><img src="{{item4.pic}}" alt="{{item4.title}}" width="250px" height="142px"/></a>
 								<div class="like-text">
 									<p>{{item4.title}}</p>
 									<h3>{{item4.title}}</h3>
