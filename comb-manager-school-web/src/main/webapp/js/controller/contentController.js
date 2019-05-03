@@ -98,6 +98,6 @@ app.controller('contentController' ,function($scope,$controller   ,contentServic
 	
 	$scope.status = ["无效","有效"];
 	
-	$scope.contentType=["","首页轮播广告","今日推荐","活动专区","学生天地","蜂巢·有趣区","广告扩展一号位","广告扩展二号位"];
+	$scope.contentType=["","首页轮播广告","二级推荐广告","三级推荐广告","四级下侧广告","蜂巢·有趣区","广告扩展一号位","广告扩展二号位"];
 	
 });	

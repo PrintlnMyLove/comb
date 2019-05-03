@@ -30,125 +30,208 @@
 		</div>
 		<!--register-->
 		<div class="registerArea">
-			<h3>创业项目入驻申请<span class="go">我有账号，去<a href="teamlogin.html">登陆</a></span></h3>
-			<div class="info">
-				<form class="sui-form form-horizontal">
-				
-					<div class="control-group">
-						<label class="control-label">项目登陆名（不可修改）：</label>
-						<div class="controls">
-							<input type="text" placeholder="登陆名" ng-model="entity.sellerId" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">项目登陆密码：</label>
-						<div class="controls">
-							<input type="password" placeholder="登陆密码" ng-model="entity.password" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">项目名称：</label>
-						<div class="controls">
-							<input type="text" placeholder="项目名称" ng-model="entity.nickName" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">团队名称：</label>
-						<div class="controls">
-							<input type="text" placeholder="团队名称" ng-model="entity.teamName" class="input-xfat input-xlarge">
-						</div>
-					</div>
-				
-					<div class="control-group">
-						<label class="control-label">团队成员：</label>
-						<div class="controls">
-							<input type="text" placeholder="团队成员" ng-model="entity.mumber" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">团队负责人：</label>
-						<div class="controls">
-							<input type="text" placeholder="团队负责人" ng-model="entity.linkmanName" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">团队负责人学号：</label>
-						<div class="controls">
-							<input type="text" placeholder="团队负责人学号" ng-model="entity.leaderId" class="input-xfat input-xlarge">
-						</div>
-					</div>	
-					
-					<div class="control-group">
-						<label class="control-label">团队负责人手机：</label>
-						<div class="controls">
-							<input type="text" placeholder="团队负责人手机" ng-model="entity.linkmanMobile" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">团队负责人邮箱：</label>
-						<div class="controls">
-							<input type="text" placeholder="团队负责人邮箱" ng-model="entity.linkmanEmail" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">团队办公地址：</label>
-						<div class="controls">
-							<input type="text" placeholder="团队办公地址" ng-model="entity.addressDetail" class="input-xfat input-xlarge">
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">团队简介：</label>
-						<div class="controls">
-							<textarea   cols="2"  placeholder="团队简介"  ng-model="entity.brief"  rows="6" class="input-xfat input-xlarge"  style="OVERFLOW:hidden"></textarea>
-						</div>
-					</div>
-					
-					<div class="control-group">
-						<label class="control-label">团队申请文件上传：</label>
-						<div class="controls">
-							<input type="file" id="file"/>
-		                    <input type="button" value="上传" ng-click="uploadApplyFile()"/>  
-						</div>
-					</div>	
-					
-							
-					
-					<div class="control-group">
-						<label for="inputPassword" class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-						<div class="controls">
-							<input name="m1" type="checkbox" value="2" checked=""><span>同意协议并注册  <a href="sampling.html">《蜂巢创业团队入驻协议》</a></span>
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label"></label>
-						<div class="controls btn-reg">
-							<a class="sui-btn btn-block btn-xlarge btn-danger"  target="_blank" ng-click="add()">申请入驻</a>
-						</div>
-					</div>
+			<fieldset class="info" style="text-align:left;">
+				<legend><h3>创业项目入驻申请<span class="go">我有账号，去<a href="teamlogin.html">登陆</a></span></h3></legend>
+				<form class="sui-form form-horizontal" style="font-size: 16px">
+				<table style="margin-left: 300px;text-align: right;border-collapse:separate; border-spacing:0px 25px;">
+					<tr>
+						<td>&nbsp;</td>
+						<td>项目登陆账户：</td>
+						<td style="text-align: left"><input type="text" placeholder="登陆名" ng-model="entity.sellerId" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>项目登陆密码：</td>
+						<td style="text-align: left"><input type="password" placeholder="登陆密码" ng-model="entity.password" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>项目名称：</td>
+						<td style="text-align: left"><input type="text" placeholder="项目名称" ng-model="entity.nickName" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队名称：</td>
+						<td style="text-align: left"><input type="text" placeholder="团队名称" ng-model="entity.teamName" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队成员：</td>
+						<td style="text-align: left"><input type="text" placeholder="团队成员" ng-model="entity.mumber" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队负责人：</td>
+						<td style="text-align: left"><input type="text" placeholder="团队负责人" ng-model="entity.linkmanName" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队负责人学号：</td>
+						<td style="text-align: left"><input type="text" placeholder="团队负责人学号" ng-model="entity.leaderId" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队负责人手机：</td>
+						<td style="text-align: left"><input type="text" placeholder="团队负责人手机" ng-model="entity.linkmanMobile" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队负责人邮箱：</td>
+						<td style="text-align: left"><input type="text" placeholder="团队负责人邮箱" ng-model="entity.linkmanEmail" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队办公地址：</td>
+						<td style="text-align: left"><input type="text" placeholder="团队办公地址" ng-model="entity.addressDetail" class="input-xfat input-xlarge">
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队简介：</td>
+						<td style="text-align: left"><textarea   cols="2"  placeholder="团队简介"  ng-model="entity.brief"  rows="6" class="input-xfat input-xlarge"  style="OVERFLOW:hidden;border-radius: 15px;"></textarea>
+						</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>团队申请文件上传：</td>
+						<td style="text-align: left"><input type="file" id="file" />
+							<input type="button" value="上传" ng-click="uploadApplyFile()"/></td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<a class="sui-btn btn-block btn-xlarge btn-danger"  target="_blank" ng-click="add()">申请入驻</a>
 				</form>
-				<div class="clearfix"></div>
-			</div>
+			</fieldset>
+			<!--<h3>创业项目入驻申请<span class="go">我有账号，去<a href="teamlogin.html">登陆</a></span></h3>-->
+			<!--<div class="info">-->
+				<!--<form class="sui-form form-horizontal">-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">项目登陆账户（不可修改）：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="登陆名" ng-model="entity.sellerId" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">项目登陆密码：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="password" placeholder="登陆密码" ng-model="entity.password" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">项目名称：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="项目名称" ng-model="entity.nickName" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队名称：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="团队名称" ng-model="entity.teamName" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队成员：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="团队成员" ng-model="entity.mumber" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队负责人：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="团队负责人" ng-model="entity.linkmanName" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队负责人学号：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="团队负责人学号" ng-model="entity.leaderId" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队负责人手机：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="团队负责人手机" ng-model="entity.linkmanMobile" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队负责人邮箱：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="团队负责人邮箱" ng-model="entity.linkmanEmail" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队办公地址：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="text" placeholder="团队办公地址" ng-model="entity.addressDetail" class="input-xfat input-xlarge">-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队简介：</label>-->
+						<!--<div class="controls">-->
+							<!--<textarea   cols="2"  placeholder="团队简介"  ng-model="entity.brief"  rows="6" class="input-xfat input-xlarge"  style="OVERFLOW:hidden"></textarea>-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<!--<div class="control-group">-->
+						<!--<label class="control-label">团队申请文件上传：</label>-->
+						<!--<div class="controls">-->
+							<!--<input type="file" id="file"/>-->
+							<!--<input type="button" value="上传" ng-click="uploadApplyFile()"/>-->
+						<!--</div>-->
+					<!--</div>-->
+
+
+
+					<!--<div class="control-group">-->
+						<!--<label for="inputPassword" class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>-->
+						<!--<div class="controls">-->
+							<!--<input name="m1" type="checkbox" value="2" checked=""><span>同意协议并注册  <a href="sampling.html">《蜂巢创业团队入驻协议》</a></span>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="control-group">-->
+						<!--<label class="control-label"></label>-->
+						<!--<div class="controls btn-reg">-->
+							<!--<a class="sui-btn btn-block btn-xlarge btn-danger"  target="_blank" ng-click="add()">申请入驻</a>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</form>-->
+				<!--<div class="clearfix"></div>-->
+			<!--</div>-->
 		</div>
 		<!--foot-->
 		<div class="py-container copyright">
-			<ul>
-				<li>关于我们</li>
-				<li>联系我们</li>
-				<li>联系客服</li>
-				<li>商家入驻</li>
-				<li>营销中心</li>
-				<li>手机蜂巢</li>
-				<li>销售联盟</li>
-				<li>品优购社区</li>
-			</ul>
+			
 			<div class="address">地址：北京工商大学</div>
 			<div class="beian">京ICP备08001421号京公网安备110108007702
 			</div>

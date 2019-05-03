@@ -269,11 +269,11 @@ li.nav-item {
     color: #fff;
 }
 .Login-menu .left-ensconce{
-    width: 50px;
-    height: 240px;
-    background: #20343c;
+    width: 40px;
+    background: #FFFFFF;
     float: left;
-    border: 1px solid #000;
+    border: 1px solid #d8d2d5;
+    border-left: 0px solid;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     position: fixed;
@@ -281,13 +281,34 @@ li.nav-item {
     top: 300px;
     z-index: 1000;
     opacity: 0.85;
-}
+}.left-ensconce a{
+    color: #868686;
+ }.left-ensconce h2{
+    line-height: 70%;
+ }
+
+.left-ensconce2{
+    width: 40px;
+    background: none;
+    float: left;
+    border: 0px solid;
+    border-left: 0px solid;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    position: fixed;
+    left: 0;
+    top: 300px;
+    z-index: 1000;
+    opacity: 0.85;
+}.left-ensconce2 a{
+    color: white;
+ }
 .Login-menu .right-ensconce{
-    width: 50px;
-    height: 240px;
-    background: #20343c;
+    width: 40px;
+    background: #FFFFFF;
     float: right;
-    border: 1px solid #000;
+    border: 1px solid #d8d2d5;
+    border-right: 0px solid;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
     position: fixed;
@@ -295,16 +316,35 @@ li.nav-item {
     top: 300px;
     z-index: 1000;
     opacity: 0.85;
-}
+}.right-ensconce a{
+     color: #868686;
+ }.right-ensconce h2{
+      line-height: 70%;
+  }
+.right-ensconce2{
+    width: 40px;
+    background: none;
+    float: right;
+    border: 0px solid;
+    border-right: 0px solid;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    position: fixed;
+    right: 0;
+    top: 300px;
+    z-index: 1000;
+    opacity: 0.85;
+}.right-ensconce2 a{
+     color: white;
+ }
+
 .Login-menu .left-ensconce h2 img {
     width: 52%;
 }
 .Login-menu .right-ensconce h2 img {
     width: 52%;
 }
-.Login-menu a{
-    color: #fff;
-}
+
 /*-- video section --*/
 
 .video-button {
