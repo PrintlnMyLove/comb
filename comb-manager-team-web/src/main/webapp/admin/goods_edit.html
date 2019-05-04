@@ -5,7 +5,7 @@
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>商品编辑</title>
+    <title>服务编辑</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
   
@@ -49,10 +49,10 @@
                         <!--tab头-->
                         <ul class="nav nav-tabs">                       		
                             <li class="active">
-                                <a href="#home" data-toggle="tab">商品基本信息</a>                                                        
+                                <a href="#home" data-toggle="tab">服务基本信息</a>                                                        
                             </li>   
                             <li >
-                                <a href="#pic_upload" data-toggle="tab">商品图片</a>                                                        
+                                <a href="#pic_upload" data-toggle="tab">服务图片</a>                                                        
                             </li>    
                             <li >
                                 <a href="#customAttribute" data-toggle="tab">扩展属性</a>                                                        
@@ -69,7 +69,7 @@
                             <!--表单内容-->
                             <div class="tab-pane active" id="home">
                                 <div class="row data-type">                                  
-								   <div class="col-md-2 title">商品分类</div>
+								   <div class="col-md-2 title">服务分类</div>
 		                          
 		                           	  <div class="col-md-10 data">
 		                           	  	<table>
@@ -93,9 +93,9 @@
 		                              </div>	                              
 		                          	  
 									
-		                           <div class="col-md-2 title">商品名称</div>
+		                           <div class="col-md-2 title">服务名称</div>
 		                           <div class="col-md-10 data">
-		                               <input type="text" ng-model="entity.goods.goodsName" class="form-control" placeholder="商品名称" value="">
+		                               <input type="text" ng-model="entity.goods.goodsName" class="form-control" placeholder="服务名称" value="">
 		                           </div>
 		                           
 		                           <div class="col-md-2 title">品牌</div>
@@ -116,7 +116,7 @@
 		                           	   </div>
 		                           </div>
 		                           
-		                           <div class="col-md-2 title editer">商品介绍</div>
+		                           <div class="col-md-2 title editer">服务介绍</div>
                                    <div class="col-md-10 data editer">
                                        <textarea name="content" style="width:800px;height:400px;visibility:hidden;" ></textarea>
                                    </div>
@@ -256,7 +256,7 @@
                  	
                    </div>
                   <div class="btn-toolbar list-toolbar">
-				      <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i>提交商品审核</button>
+				      <button class="btn btn-primary" ng-click="save()"><i class="fa fa-save"></i>提交服务审核</button>
 				      <button class="btn btn-default" onclick="window.location.href = 'goods.html'">返回列表</button>
 				  </div>
 			
@@ -269,7 +269,7 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">上传商品图片</h3>
+			<h3 id="myModalLabel">上传服务图片</h3>
 		</div>
 		<div class="modal-body">							
 			
@@ -279,7 +279,7 @@
 		      		<td><input ng-model="image_entity.color" class="form-control" placeholder="颜色" >  </td>
 		      	</tr>			    
 		      	<tr>
-		      		<td>商品图片</td>
+		      		<td>服务图片</td>
 		      		<td>
 						<table>
 							<tr>
