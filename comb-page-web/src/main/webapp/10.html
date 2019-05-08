@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title>产品详情页</title>
+	 <link rel="icon" href="icon.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/webbase.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages-item.css" />
+    <link rel="stylesheet" type="text/css" href="css/pages-zoom.css" />
+    <link rel="stylesheet" type="text/css" href="css/widget-cartPanelView.css" />
+    
+    <script type="text/javascript" src="plugins/angularjs/angular.min.js"> </script>
+    <script type="text/javascript" src="js/base.js"> </script>
+    <script type="text/javascript" src="js/controller/itemController.js"> </script>
+   <script>
+       //SKU商品列表
+	   var skuList=[    	    
+	    	    		    		{
+		    		"id":25,
+		    		"title":"二手书",
+		    		"price":5,		    		
+		    		"spec": {}	
+		    		} ,     		
+	   ];  
+    </script>
+
+</head>
+
+<body ng-app="comb" ng-controller="itemController" ng-init="num=1;loadSku()">
+<!--页面顶部 开始-->
+<!--页面顶部 开始-->
+<div id="nav-bottom">
+	<!--顶部-->
+	<div class="nav-top">
+		<div class="top">
+			<div class="py-container">
+				<div class="shortcut">
+					<ul class="fl">
+						<li class="f-item">蜂巢欢迎您！</li>
+						<li class="f-item">请<a href="http://localhost:8080/cas/login" target="_blank">登录</a>　<span><a href="http://localhost:8086/register.html" target="_blank">免费注册</a></span></li>
+					</ul>
+					<ul class="fr">
+						<li class="f-item">我的订单</li>
+						<li class="f-item space"></li>
+						<li class="f-item"><a href="home.html" target="_blank">我的蜂巢</a></li>
+						<li class="f-item space"></li>
+						<li class="f-item">蜂巢会员</li>
+						<li class="f-item space"></li>
+						<li class="f-item">企业采购</li>
+						<li class="f-item space"></li>
+						<li class="f-item">关注蜂巢</li>
+						<li class="f-item space"></li>
+						<li class="f-item" id="service">
+							<span>客户服务</span>
+							<ul class="service">
+								<li><a href="cooperation.html" target="_blank">合作招商</a></li>
+								<li><a href="shoplogin.html" target="_blank">商家后台</a></li>
+								<li><a href="cooperation.html" target="_blank">合作招商</a></li>
+								<li><a href="#">商家后台</a></li>
+							</ul>
+						</li>
+						<li class="f-item space"></li>
+						<li class="f-item">网站导航</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--头部-->
+		<div class="header">
+			<div class="py-container">
+				<div class="yui3-g Logo">
+					<div class="yui3-u Left logoArea">
+						<a class="logo-bd" title="蜂巢" href="JD-index.html" target="_blank"></a>
+					</div>
+					<div class="yui3-u Center searchArea">
+						<div class="search">
+							<form action="" class="sui-form form-inline">
+								<!--searchAutoComplete-->
+								<div class="input-append">
+									<input type="text" id="autocomplete" type="text" class="input-error input-xxlarge" />
+									<button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+								</div>
+							</form>
+						</div>
+						<div class="hotwords">
+							<ul>
+								<li class="f-item">蜂巢首发</li>
+								<li class="f-item">亿元优惠</li>
+								<li class="f-item">9.9元团购</li>
+								<li class="f-item">每满99减30</li>
+								<li class="f-item">亿元优惠</li>
+								<li class="f-item">9.9元团购</li>
+								<li class="f-item">办公用品</li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="yui3-u Right shopArea">
+						<div class="fr shopcar">
+							<div class="show-shopcar" id="shopcar">
+								<span class="car"></span>
+								<a class="sui-btn btn-default btn-xlarge" href="cart.html" target="_blank">
+									<span>我的购物车</span>
+									<i class="shopnum">0</i>
+								</a>
+								<div class="clearfix shopcarlist" id="shopcarlist" style="display:none">
+									<p>"啊哦，你的购物车还没有商品哦！"</p>
+									<p>"啊哦，你的购物车还没有商品哦！"</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="yui3-g NavList">
+					<div class="yui3-u Left all-sort">
+						<h4>全部商品分类</h4>
+					</div>
+					<div class="yui3-u Center navArea">
+						<ul class="nav">
+							<li class="f-item">服装城</li>
+							<li class="f-item">美妆馆</li>
+							<li class="f-item">蜂巢超市</li>
+							<li class="f-item">全球购</li>
+							<li class="f-item">闪购</li>
+							<li class="f-item">团购</li>
+							<li class="f-item">有趣</li>
+							<li class="f-item"><a href="seckill-index.html" target="_blank">秒杀</a></li>
+						</ul>
+					</div>
+					<div class="yui3-u Right"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--页面顶部 结束-->
+	<div class="py-container">
+		<div id="item">
+			<div class="crumb-wrap">
+				<ul class="sui-breadcrumb">
+					<li>
+						<a href="#">二手好书</a>
+					</li>
+					<li>
+						<a href="#">专业</a>
+					</li>
+					<li>
+						<a href="#">信管</a>
+					</li>
+					<li class="active">此类</li>
+				</ul>
+			</div>
+			<!--product-info-->
+			<div class="product-info">
+				<div class="fl preview-wrap">
+					<!--放大镜效果-->
+					<div class="zoom">
+						<!--默认第一个预览-->
+						<div id="preview" class="spec-preview">
+							<span class="jqzoom"><img jqimg="FreeMarker template error (DEBUG mode; use RETHROW in production!):
+The following has evaluated to null or missing:
+==> imageList[0]  [in template "item.ftl" at line 68, column 92]
+
+----
+Tip: It's the final [] step that caused this error, not those before it.
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${imageList[0].url}  [in template "item.ftl" at line 68, column 90]
+----
+
+Java stack trace (for programmers):
+----
+freemarker.core.InvalidReferenceException: [... Exception message was already printed; see it above ...]
+	at freemarker.core.InvalidReferenceException.getInstance(InvalidReferenceException.java:131)
+	at freemarker.core.UnexpectedTypeException.newDesciptionBuilder(UnexpectedTypeException.java:77)
+	at freemarker.core.UnexpectedTypeException.<init>(UnexpectedTypeException.java:40)
+	at freemarker.core.NonHashException.<init>(NonHashException.java:46)
+	at freemarker.core.Dot._eval(Dot.java:45)
+	at freemarker.core.Expression.eval(Expression.java:78)
+	at freemarker.core.Expression.evalAndCoerceToString(Expression.java:82)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:41)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.MixedContent.accept(MixedContent.java:54)
+	at freemarker.core.Environment.visit(Environment.java:324)
+	at freemarker.core.Environment.process(Environment.java:302)
+	at freemarker.template.Template.process(Template.java:325)
+	at com.comb.page.service.impl.ItemPageServiceImpl.genItemHtml(ItemPageServiceImpl.java:85)
+	at com.comb.page.service.impl.pageListener.onMessage(pageListener.java:27)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:746)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:684)
+	at org.springframework.jms.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:651)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.doReceiveAndExecute(AbstractPollingMessageListenerContainer.java:315)
+	at org.springframework.jms.listener.AbstractPollingMessageListenerContainer.receiveAndExecute(AbstractPollingMessageListenerContainer.java:253)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.invokeListener(DefaultMessageListenerContainer.java:1150)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.executeOngoingLoop(DefaultMessageListenerContainer.java:1142)
+	at org.springframework.jms.listener.DefaultMessageListenerContainer$AsyncMessageListenerInvoker.run(DefaultMessageListenerContainer.java:1039)
+	at java.lang.Thread.run(Thread.java:748)

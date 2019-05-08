@@ -61,7 +61,7 @@ app.controller('cartController',function($scope,cartService,addressService){
 		}		
 	}
 	
-	$scope.order={paymentType:'1'};//订单对象
+	$scope.order={paymentType:'3'};//订单对象
 	
 	//选择支付类型
 	$scope.selectPayType=function(type){
@@ -101,7 +101,7 @@ app.controller('cartController',function($scope,cartService,addressService){
 				if(response.success){
 					//页面跳转
 					if($scope.order.paymentType=='1'){//如果是微信支付，跳转到支付页面
-						location.href="pay.html";
+						location.href="pay1.html";
 					}else if($scope.order.paymentType=='2'){//如果货到付款，跳转到提示页面
 						location.href="pay2.html";
 					}else{

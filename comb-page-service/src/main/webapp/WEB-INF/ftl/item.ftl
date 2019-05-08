@@ -301,66 +301,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="fr detail">
-					<div class="clearfix fitting">
-						<h4 class="kt">选择搭配</h4>
-						<div class="good-suits">
-							<div class="fl master">
-								<div class="list-wrap">
-									<div class="p-img">
-										<img src="img/_/l-m01.png" />
-									</div>
-									<em>￥5299</em>
-									<i>+</i>
-								</div>
-							</div>
-							<div class="fl suits">
-								<ul class="suit-list">
-									<li class="">
-										<div id="">
-											<img src="img/_/dp01.png" />
-										</div>
-										<i>Feless费勒斯VR</i>
-										<label data-toggle="checkbox" class="checkbox-pretty">
-    <input type="checkbox"><span>39</span>
-  </label>
-									</li>
-									<li class="">
-										<div id=""><img src="img/_/dp02.png" /> </div>
-										<i>Feless费勒斯VR</i>
-										<label data-toggle="checkbox" class="checkbox-pretty">
-    <input type="checkbox"><span>50</span>
-  </label>
-									</li>
-									<li class="">
-										<div id=""><img src="img/_/dp03.png" /></div>
-										<i>Feless费勒斯VR</i>
-										<label data-toggle="checkbox" class="checkbox-pretty">
-    <input type="checkbox"><span>59</span>
-  </label>
-									</li>
-									<li class="">
-										<div id=""><img src="img/_/dp04.png" /></div>
-										<i>Feless费勒斯VR</i>
-										<label data-toggle="checkbox" class="checkbox-pretty">
-    <input type="checkbox"><span>99</span>
-  </label>
-									</li>
-								</ul>
-							</div>
-							<div class="fr result">
-								<div class="num">已选购0件商品</div>
-								<div class="price-tit"><strong>套餐价</strong></div>
-								<div class="price">￥5299</div>
-								<button class="sui-btn  btn-danger addshopcar">加入购物车</button>
-							</div>
-						</div>
-					</div>
+						<h4 class="kt">服务详情</h4>
+						
 					<div class="tab-main intro">
 						<ul class="sui-nav nav-tabs tab-wraped">
 							<li class="active">
 								<a href="#one" data-toggle="tab">
-									<span>商品介绍</span>
+									<span>服务介绍</span>
 								</a>
 							</li>
 							<li>
@@ -375,7 +322,7 @@
 							</li>
 							<li>
 								<a href="#four" data-toggle="tab">
-									<span>商品评价</span>
+									<span>服务评价</span>
 								</a>
 							</li>
 							<li>

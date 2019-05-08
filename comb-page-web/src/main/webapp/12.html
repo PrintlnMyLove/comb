@@ -20,16 +20,10 @@
        //SKU商品列表
 	   var skuList=[    	    
 	    	    		    		{
-		    		"id":19,
-		    		"title":"测试商品 九成新",
-		    		"price":5,		    		
-		    		"spec": {"新旧程度":"九成新"}	
-		    		} ,     		
-		    		{
-		    		"id":20,
-		    		"title":"测试商品 八成新",
-		    		"price":5,		    		
-		    		"spec": {"新旧程度":"八成新"}	
+		    		"id":23,
+		    		"title":"自传二手书",
+		    		"price":1000000,		    		
+		    		"spec": {}	
 		    		} ,     		
 	   ];  
     </script>
@@ -169,7 +163,7 @@
 					<div class="zoom">
 						<!--默认第一个预览-->
 						<div id="preview" class="spec-preview">
-							<span class="jqzoom"><img jqimg="http://47.95.211.233:81/group1/M00/00/00/rBEluVzMTRSAX_Q7AAA6bWtiQkE030.jpg" src="http://47.95.211.233:81/group1/M00/00/00/rBEluVzMTRSAX_Q7AAA6bWtiQkE030.jpg" width="400px" height="400px" /></span>
+							<span class="jqzoom"><img jqimg="http://47.95.211.233:81/group1/M00/00/00/rBEluVzNg5uAc9LwAAA6bWtiQkE212.jpg" src="http://47.95.211.233:81/group1/M00/00/00/rBEluVzNg5uAc9LwAAA6bWtiQkE212.jpg" width="400px" height="400px" /></span>
 						</div>
 						<!--下方的缩略图-->
 						<div class="spec-scroll">
@@ -177,7 +171,7 @@
 							<!--左右按钮-->
 							<div class="items">
 								<ul>
-										<li><img src="http://47.95.211.233:81/group1/M00/00/00/rBEluVzMTRSAX_Q7AAA6bWtiQkE030.jpg" bimg="http://47.95.211.233:81/group1/M00/00/00/rBEluVzMTRSAX_Q7AAA6bWtiQkE030.jpg" onmousemove="preview(this)" /></li>
+										<li><img src="http://47.95.211.233:81/group1/M00/00/00/rBEluVzNg5uAc9LwAAA6bWtiQkE212.jpg" bimg="http://47.95.211.233:81/group1/M00/00/00/rBEluVzNg5uAc9LwAAA6bWtiQkE212.jpg" onmousemove="preview(this)" /></li>
 								</ul>
 							</div>
 							<a class="next">&gt;</a>
@@ -188,7 +182,7 @@
 					<div class="sku-name">
 						<h4>{{sku.title}}</h4>
 					</div>
-					<div class="news"><span>测试商品</span></div>
+					<div class="news"><span>自传</span></div>
 					<div class="summary">
 						<div class="summary-wrap">
 							<div class="fl title">
@@ -235,25 +229,6 @@
 					<div class="clearfix choose">
 						<div id="specification" class="summary-wrap clearfix">
 						
-							
-								<dl>
-									<dt>
-										<div class="fl title">
-										<i>新旧程度</i>
-									</div>
-									</dt>
-										<dd><a href="javascript:;" 
-										class="{{isSelected('新旧程度','九成新')?'selected':''}}"
-										ng-click="selectSpecification('新旧程度','九成新')">九成新
-										<span title="点击取消选择">&nbsp;</span>
-										</a></dd>
-										<dd><a href="javascript:;" 
-										class="{{isSelected('新旧程度','八成新')?'selected':''}}"
-										ng-click="selectSpecification('新旧程度','八成新')">八成新
-										<span title="点击取消选择">&nbsp;</span>
-										</a></dd>
-								</dl>
-							
 							
 						</div>
 					
@@ -491,18 +466,16 @@
 						<div class="tab-content tab-wraped">
 							<div id="one" class="tab-pane active">
 								<ul class="goods-intro unstyled">
-											<li>配套资料：有</li>
-											<li>配套笔记：有</li>
 								</ul>
 								<div class="intro-detail">
-									测试商品
+									自传二手书
 								</div>
 							</div>
 							<div id="two" class="tab-pane">
-								<p>测试商品</p>
+								<p>完好</p>
 							</div>
 							<div id="three" class="tab-pane">
-								<p>测试商品</p>
+								<p>保证</p>
 							</div>
 							<div id="four" class="tab-pane">
 								<p>商品评价</p>

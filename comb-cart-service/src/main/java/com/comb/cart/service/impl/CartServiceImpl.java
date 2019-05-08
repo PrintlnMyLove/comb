@@ -19,7 +19,7 @@ import com.comb.pojo.TbItem;
 import com.comb.pojo.TbOrderItem;
 import com.comb.pojogroup.Cart;
 
-@Service
+@Service(timeout=60000)
 public class CartServiceImpl implements CartService {
 
 	@Autowired

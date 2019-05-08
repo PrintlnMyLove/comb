@@ -108,7 +108,7 @@ app.controller('orderController' ,function($scope,$controller   , orderService,o
 	
 	
 	// 显示状态
-	$scope.type = ["","在线付款","货到付款"];
+	$scope.type = ["","蜂巢物流中心","货到付款","蜂巢物流中心"];
 	$scope.status = ["","未付款","已付款","未发货","已发货","交易成功","交易关闭","待评价","退货"];
 	$scope.sourceType = ["","PC端","移动端"];
 });	
